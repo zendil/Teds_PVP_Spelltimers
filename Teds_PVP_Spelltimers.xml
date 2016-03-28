@@ -1,0 +1,32 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
+	<Script File="Teds_PVP_Spelltimers.lua" />
+	<Frame name="Teds_PVP_Spelltimers_Frame" enableMouse="false" movable="false" parent="UIParent" enableKeyboard="false" hidden="false">
+		<Anchors>
+			<Anchor point="TOP">
+				<Offset>
+					<AbsDimension x="0" y="-50" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1000" y="225" />
+		</Size>
+		<Scripts>
+			<OnLoad function="Teds_PVP_Spelltimers_Onload" />
+			<OnEvent function="Teds_PVP_Spelltimers_Event" />
+			<OnUpdate function="Teds_PVP_Spelltimers_Update" />
+		</Scripts>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$parentFontString" parentKey="fontstring" text="ALERT" outline="NORMAL" font="Fonts\FRIZQT__.TTF" justifyV="TOP" justifyH="CENTER">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativepoint="TOPLEFT" />
+						<Anchor point="BOTTOMRIGHT" relativepoint="BOTTOMRIGHT" />
+					</Anchors>
+					<FontHeight val="45" />
+					<Color r="1.0" g="0.0" b="0.0" />
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+</Ui>
