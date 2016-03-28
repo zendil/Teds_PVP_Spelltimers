@@ -134,7 +134,6 @@ function Teds_PVP_Spelltimers_Event(self,event,...)
                     --buff is in filter and has non-negative duration -> create alert
                     F.activealerts[v.id] = {["name"] = F.filter_def[v.id],["expire"] = v.expire}
 					if not F.activealerts_old[v.id] then
-						print(F.filter_def[v.id])
 						--this is the first detection (new buff). Play sound.
 						PlaySoundFile("Interface\\Addons\\Teds_PVP_Spelltimers\\media\\BoxingArenaSound.ogg","Master")
 						--KNOWN ISSUE: when multiple alerts are active, losing one will cause the sound to play. Somehow, the remaining aura is then seen as 'new'.
