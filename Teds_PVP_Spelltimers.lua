@@ -113,8 +113,10 @@ function Teds_PVP_Spelltimers_Event(self,event,...)
             --clear out cached values for replacement with fresh ones
             F.targetbuffs = {}
 			--store the old values to check when theres new ones
-			--TODO: this seems messy. maybe there is a better way?
-			F.activealerts_old = F.activealerts
+			F.activealerts_old = F.activealerts --creates a reference, not a copy. but it works?
+				-- for x,y in pairs(F.activealerts) do
+					-- F.activealerts_old[x] = y
+				-- end
             F.activealerts = {}
             --check all buffs
             for i=1,40 do
@@ -124,31 +126,32 @@ function Teds_PVP_Spelltimers_Event(self,event,...)
                     F.targetbuffs[i] = {["id"] = id,["expire"] = expire}
                 end
             end
-        end
-        --now, filter for the ones we want
-        if F.targetbuffs then
-            --if we have buffs on target
-            for _,v in pairs(F.targetbuffs) do
-                --iterate through the target's cached buffs
-                if F.filter_def[v.id] and (v.expire - GetTime()) > 0 then
-                    --buff is in filter and has non-negative duration -> create alert
-                    F.activealerts[v.id] = {["name"] = F.filter_def[v.id],["expire"] = v.expire}
-					if not F.activealerts_old[v.id] then
-						--this is the first detection (new buff). Play sound.
-						PlaySoundFile("Interface\\Addons\\Teds_PVP_Spelltimers\\media\\BoxingArenaSound.ogg","Master")
-						--KNOWN ISSUE: when multiple alerts are active, losing one will cause the sound to play. Somehow, the remaining aura is then seen as 'new'.
-						--Unknown how the check fails; both expired and remaining aura should still be in _old on the first iteration after the exired fades.
+			--now, filter for the ones we want
+			if F.targetbuffs then
+				--if we have buffs on target
+				for _,v in pairs(F.targetbuffs) do
+					--iterate through the target's cached buffs
+					if F.filter_def[v.id] and (v.expire - GetTime()) > 0 then
+						--buff is in filter and has non-negative duration -> create alert
+						F.activealerts[v.id] = {["name"] = F.filter_def[v.id],["expire"] = v.expire}
 					end
-                end
-            end
-        end
-		--now, check if we had any that matched filter
-		if next(F.activealerts) ~= nil then
-			--we did match some filters. show the frame (which will start updates)
-			F:Show()
-		else
-			--no alerts to show. hide the frame (which stops updates)
-			F:Hide()
+				end
+			end
+			--now, check if we had any that matched filter
+			if next(F.activealerts) ~= nil then
+				--we did match some filters. show the frame (which will start updates)
+				F:Show()
+			else
+				--no alerts to show. hide the frame (which stops updates)
+				F:Hide()
+			end
+			for m,_ in pairs(F.activealerts) do
+				--we have to iterate to check for new entries
+				if not F.activealerts_old[m] then
+					--we have new alerts. play sound
+					PlaySoundFile("Interface\\Addons\\Teds_PVP_Spelltimers\\media\\BoxingArenaSound.ogg","Master")
+				end
+			end
 		end
     end
 end
