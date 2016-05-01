@@ -9,5 +9,5 @@
 ## X-Curse-Project-ID: teds_pvp_spelltimers
 ## X-Curse-Repository-ID: wow/teds_pvp_spelltimers/mainline
 
-Teds_PVP_Spelltimers.lua
 Teds_PVP_Spelltimers.xml
+Teds_PVP_Spelltimers.lua
