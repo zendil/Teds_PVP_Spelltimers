@@ -1,10 +1,10 @@
-## Interface: 60200
+## Interface: 70000
 ## Title: Ted's PVP Spelltimers
 ## Notes: Shows alerts for enemy buffs. (Designed for PVP)
-## Version: 1.0
+## Version: 1.0.1
 ## Author: Zendil-The Underbog
 ##
-## X-Curse-Packaged-Version: 1.0
+## X-Curse-Packaged-Version: 1.0.1
 ## X-Curse-Project-Name: Ted's PVP Spelltimers
 ## X-Curse-Project-ID: teds_pvp_spelltimers
 ## X-Curse-Repository-ID: wow/teds_pvp_spelltimers/mainline
