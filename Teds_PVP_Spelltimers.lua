@@ -45,21 +45,20 @@ w.filter_def = {
 		[53480] = "Roar of Sacrifice",
 	--Mage
 		[45438] = "Ice Block",
-		[110909] = "Alter Time",
-		[157913] = "Evanesce",
+		[86949] = "Cauterize",
+		[198111] = "Temporal Shield",
 		[110960] = "Greater Invisibility",
 	--Monk
 		[115203] = "Fortifying Brew",
-		[137562] = "Nimble Brew",
-		[115308] = "Elusive Brew",
+		[213664] = "Nimble Brew",
 		[116849] = "Life Cocoon",
-		--[122470] = "Touch of Karma", --This is the buff that goes on the target, not the monk
 		[125174] = "Touch of Karma",
 		[115176] = "Zen Meditation",
 		[122783] = "Diffuse Magic",
 		[122278] = "Dampen Harm",
 		[116844] = "Ring of Peace",
 		[116841] = "Tiger's Lust",
+--TODO: Update Spells from here on
 	--Paladin
 		[642] = "Divine Shield",
 		[498] = "Divine Protection",
