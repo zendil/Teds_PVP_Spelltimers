@@ -10,7 +10,13 @@ frame.activealerts = {}
                 --i.e. if you wanted to track "Marked for Death", it would not work as this creates a -DEBUFF- on the -PLAYER-
 frame.filter_def = {
         --Demon Hunter
-                --NYI
+                [188501] = "Spectral Sight",
+                [196555] = "Netherwalk",
+                [198589] = "Blur",
+                [207810] = "Nether Bond",
+                [227225] = "Soul Barrier",
+                [196718] = "Darkness",
+                [218256] = "Empower Wards",
         --Druid
                 [22812] = "Barkskin",
                 [102342] = "Ironbark",
