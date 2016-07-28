@@ -18,13 +18,8 @@ frame.filter_def = {
                 [227225] = "Soul Barrier",
                 [196718] = "Darkness",
                 [218256] = "Empower Wards",
-        --Druid
-                [22812] = "Barkskin",
-                [102342] = "Ironbark",
-                [61336] = "Survival Instincts",
-                [33891] = "Incarnation: Tree of Life",
         --Death Knight
-                [48792] = "Icebound Fortitude",
+                48792] = "Icebound Fortitude",
                 [48707] = "Anti-Magic Shell",
                 [55233] = "Vampiric Blood",
                 [49028] = "Dancing Rune Weapon",
@@ -32,6 +27,11 @@ frame.filter_def = {
                 [206977] = "Blood Mirror",
                 [194679] = "Rune Tap",
                 [207319] = "Corpse Shield",
+        --Druid
+                [22812] = "Barkskin",
+                [102342] = "Ironbark",
+                [61336] = "Survival Instincts",
+                [33891] = "Incarnation: Tree of Life",
         --Hunter
                 [19263] = "Deterrence",
                 [109215] = "Posthaste",
