@@ -15,16 +15,16 @@ w.filter_def = {
 	--Demon Hunter
 		[188501] = "Spectral Sight",
 		[196555] = "Netherwalk",
-		[198589] = "Blur",
+		[212800] = "Blur",
 		[207810] = "Nether Bond",
 		[227225] = "Soul Barrier",
-		[196718] = "Darkness",
+		[209426] = "Darkness",
 		[218256] = "Empower Wards",
 	--Death Knight
 		[48792] = "Icebound Fortitude",
 		[48707] = "Anti-Magic Shell",
 		[55233] = "Vampiric Blood",
-		[49028] = "Dancing Rune Weapon",
+		[49028] = "Dancing Rune Weapon", --This might be the wrong id, further testing req
 		[212552] = "Wraith Walk",
 		[206977] = "Blood Mirror",
 		[194679] = "Rune Tap",
