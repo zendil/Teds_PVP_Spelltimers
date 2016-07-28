@@ -36,7 +36,8 @@ w.filter_def = {
 		[61336] = "Survival Instincts",
 		[33891] = "Incarnation: Tree of Life",
 	--Hunter
-		[19263] = "Deterrence",
+		[186625] = "Aspect of the Turtle",
+		[186257] = "Aspect of the Cheetah",
 		[109215] = "Posthaste",
 		[54216] = "Master's Call",
 		[53480] = "Roar of Sacrifice",
