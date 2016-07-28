@@ -8,6 +8,7 @@ frame.activealerts = {}
         --To remove a spell just delete or comment out it's line
         --Note when adding your own spells that the mechanism by which spells are tracked is as -BUFFS- on your -TARGET-
                 --i.e. if you wanted to track "Marked for Death", it would not work as this creates a -DEBUFF- on the -PLAYER-
+--TODO: PvP talents for all classes
 frame.filter_def = {
         --Demon Hunter
                 [188501] = "Spectral Sight",
@@ -25,11 +26,12 @@ frame.filter_def = {
         --Death Knight
                 [48792] = "Icebound Fortitude",
                 [48707] = "Anti-Magic Shell",
-                [49039] = "Lichborne",
-                [96268] = "Death's Advance",
-                [115018] = "Desecrated Ground",
                 [55233] = "Vampiric Blood",
-                [171039] = "Rune Tap",
+                [49028] = "Dancing Rune Weapon",
+                [212552] = "Wraith Walk",
+                [206977] = "Blood Mirror",
+                [194679] = "Rune Tap",
+                [207319] = "Corpse Shield",
         --Hunter
                 [19263] = "Deterrence",
                 [109215] = "Posthaste",
