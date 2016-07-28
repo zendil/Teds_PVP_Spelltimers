@@ -1,14 +1,17 @@
 --Teds_PVP_Spelltimers.lua by Zendil-The Underbog (US)
-local frame = Teds_PVP_Spelltimers_Frame
+Teds_PVP_Spelltimers_Save = {}
+Teds_PVP_Spelltimers_Work = {}
+local f = Teds_PVP_Spelltimers_Frame
+local w = Teds_PVP_Spelltimers_Work
 --Define variables
-frame.activealerts = {}
+w.activealerts = {}
 --Create list of all defensive cooldowns that alerts will be created for
         --To add a spell, insert a new entry with the buff's spellid as the key and the name (or whatever text should be displayed) as the values
         --To remove a spell just delete or comment out it's line
         --Note when adding your own spells that the mechanism by which spells are tracked is as -BUFFS- on your -TARGET-
                 --i.e. if you wanted to track "Marked for Death", it would not work as this creates a -DEBUFF- on the -PLAYER-
 --TODO: PvP talents for all classes
-frame.filter_def = {
+w.filter_def = {
         --Demon Hunter
                 [188501] = "Spectral Sight",
                 [196555] = "Netherwalk",
@@ -103,7 +106,8 @@ frame.filter_def = {
 }
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
-local function event(self, event, ...)
+local function f:event(self, event, ...)
+		local w = Teds_PVP_Spelltimers_Work
         if event == "UNIT_AURA" or event == "PLAYER_TARGET_CHANGED" then
                 --first, fetch all buffs on target
                 local unit
@@ -115,37 +119,37 @@ local function event(self, event, ...)
                 if unit == "target" then --TODO: (maybe?) only update/active/show for hostile targets, not friendlies
                         --this event affects our target, so we want to update now
                         --clear out cached values for replacement with fresh ones
-                        self.targetbuffs = {}
-                        self.targetstealable = {}
+                        w.targetbuffs = {}
+                        w.targetstealable = {}
                         --store the old values to check when theres new ones
-                        self.activealerts_old = self.activealerts --creates a reference, not a copy. but it works?
-                        self.activealerts = {}
+                        w.activealerts_old = w.activealerts --creates a reference, not a copy. but it works?
+                        w.activealerts = {}
                         --check all buffs
                         for i=1,40 do
                                 local name,_,_,_,_,_,expire,_,steal,_,id = UnitAura("target",i,"HELPFUL")
                                 if id then
                                         --if buff exists (id is within bounds) then cache it
-                                        self.targetbuffs[i] = {["id"] = id,["expire"] = expire}
+                                        w.targetbuffs[i] = {["id"] = id,["expire"] = expire}
                                         if steal == 1 then
                                                 --buff is stealable so store that too
-                                                self.targetstealable[i] = name
+                                                w.targetstealable[i] = name
                                                 --this will be used in the future (future version)
                                         end
                                 end
                         end
                         --now, filter for the ones we want
-                        if self.targetbuffs then
+                        if w.targetbuffs then
                                 --if we have buffs on target
-                                for _,v in pairs(self.targetbuffs) do
+                                for _,v in pairs(w.targetbuffs) do
                                         --iterate through the target's cached buffs
-                                        if self.filter_def[v.id] and (v.expire - GetTime()) > 0 then
+                                        if w.filter_def[v.id] and (v.expire - GetTime()) > 0 then
                                                 --buff is in filter and has non-negative duration -> create alert
-                                                self.activealerts[v.id] = {["name"] = self.filter_def[v.id],["expire"] = v.expire}
+                                                w.activealerts[v.id] = {["name"] = w.filter_def[v.id],["expire"] = v.expire}
                                         end
                                 end
                         end
                         --now, check if we had any that matched filter
-                        if next(self.activealerts) ~= nil then
+                        if next(w.activealerts) ~= nil then
                                 --we did match some filters. show the frame (which will start updates)
                                 if not self:IsShown() then
                                         self:Show()
@@ -156,9 +160,9 @@ local function event(self, event, ...)
                                     self:Hide()
                                 end
                         end
-                        for m,_ in pairs(self.activealerts) do
+                        for m,_ in pairs(w.activealerts) do
                                 --we have to iterate to check for new entries
-                                if not self.activealerts_old[m] then
+                                if not w.activealerts_old[m] then
                                         --we have new alerts. play sound
                                         PlaySoundFile("Interface\\Addons\\Teds_PVP_Spelltimers\\media\\BoxingArenaSound.ogg","Master")
                                 end
@@ -166,28 +170,29 @@ local function event(self, event, ...)
                 end
         end
 end
-local function update(self)
+local function f:update(self)
+		local w = Teds_PVP_Spelltimers_Work
         --reset the output text
-        self.output = ""
+        w.output = ""
         local duration
-        for _,t in pairs(self.activealerts) do
+        for _,t in pairs(w.activealerts) do
                 --iterate through active alerts, adding each to the output text
-                if self.output ~= "" then
-                        self.output = self.output.."\n"
+                if w.output ~= "" then
+                        w.output = w.output.."\n"
                 end
                 duration = t.expire - GetTime()
                 if duration < 0 then
                         duration = 0
                 end
-                self.output = self.output..string.format("%.1f%s%.1f",duration," - "..t.name.." - ",duration)
+                w.output = w.output..string.format("%.1f%s%.1f",duration," - "..t.name.." - ",duration)
         end
         --set the text once we have build the complete string
         self.fontstring:SetText(self.output)
 end
 --Assign Handlers
-frame:SetScript("OnEvent", event)
-frame:SetScript("OnUpdate", update)
+f:SetScript("OnEvent", event)
+f:SetScript("OnUpdate", update)
 --Register events
-frame:RegisterEvent("UNIT_AURA")
-frame:RegisterEvent("PLAYER_TARGET_CHANGED")
+f:RegisterEvent("UNIT_AURA")
+f:RegisterEvent("PLAYER_TARGET_CHANGED")
 --TODO: Ability to move frame, save position between sessions
