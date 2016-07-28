@@ -1,5 +1,4 @@
---Teds_PVP_Spelltimers.lua v1.0 by Zendil-The Underbog (US)
---Last updated WoW patch 6.2.4 (60200) %% 28 March 2016
+--Teds_PVP_Spelltimers.lua by Zendil-The Underbog (US)
 local frame = Teds_PVP_Spelltimers_Frame
 --Define variables
 frame.activealerts = {}
