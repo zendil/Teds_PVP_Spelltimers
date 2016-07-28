@@ -19,7 +19,7 @@ frame.filter_def = {
                 [196718] = "Darkness",
                 [218256] = "Empower Wards",
         --Death Knight
-                48792] = "Icebound Fortitude",
+                [48792] = "Icebound Fortitude",
                 [48707] = "Anti-Magic Shell",
                 [55233] = "Vampiric Blood",
                 [49028] = "Dancing Rune Weapon",
