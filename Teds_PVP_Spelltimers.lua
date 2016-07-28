@@ -30,6 +30,7 @@ w.filter_def = {
 		[194679] = "Rune Tap",
 		[207319] = "Corpse Shield",
 	--Druid
+		[1850] = "Dash",
 		[22812] = "Barkskin",
 		[102342] = "Ironbark",
 		[61336] = "Survival Instincts",
