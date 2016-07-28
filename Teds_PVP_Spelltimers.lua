@@ -35,6 +35,8 @@ w.filter_def = {
 		[102342] = "Ironbark",
 		[61336] = "Survival Instincts",
 		[33891] = "Incarnation: Tree of Life",
+		[203727] = "Thorns",
+		[106898] = "Stampeding Roar",
 	--Hunter
 		[186625] = "Aspect of the Turtle",
 		[186257] = "Aspect of the Cheetah",
