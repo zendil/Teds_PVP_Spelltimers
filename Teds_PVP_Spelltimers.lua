@@ -209,6 +209,16 @@ end
 function f:Save()
 
 end
+function f:Mover()
+	f:UnregisterEvent("UNIT_AURA")
+	f:UnregisterEvent("PLAYER_TARGET_CHANGED")
+	f:Hide()
+	local m = CreateFrame("Frame", "Teds_PVP_Spelltimers_DragFrame", UIParent, "Teds_PVP_Spelltimers_DragFrame")
+	m:RegisterForDrag("LeftButton")
+	m:SetScript("OnDragStart", m.StartMoving)
+	m:SetScript("OnDragStop", m.StopMovingOrSizing)
+end
+T = f
 --Assign Handlers
 f:SetScript("OnEvent", f.Event)
 f:SetScript("OnUpdate", f.Update)
