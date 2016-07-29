@@ -223,7 +223,7 @@ function Teds_PVP_Spelltimers_DragFrame:Done()
 	local x,y = m:GetCenter()
 	m:Hide()
 	f:ClearAllPoints()
-	f:SetPoint("CENTER", UIParent, "BOTTOM", x, y)
+	f:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
 	f:RegisterEvent("UNIT_AURA")
 	f:RegisterEvent("PLAYER_TARGET_CHANGED")
 end
@@ -231,6 +231,8 @@ function f:Mover()
 	f:UnregisterEvent("UNIT_AURA")
 	f:UnregisterEvent("PLAYER_TARGET_CHANGED")
 	f:Hide()
+	m:ClearAllPoints()
+	m:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
 	m:Show()
 	if not m.loaded then
 		m.loaded = true
