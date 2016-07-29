@@ -1,8 +1,7 @@
 --Teds_PVP_Spelltimers.lua by Zendil-The Underbog (US)
 Teds_PVP_Spelltimers_Save = {}
-Teds_PVP_Spelltimers_Work = {}
 local f = Teds_PVP_Spelltimers_Frame
-local w = Teds_PVP_Spelltimers_Work
+local w = {}
 local s = Teds_PVP_Spelltimers_Save
 --Define variables
 w.activealerts = {}
