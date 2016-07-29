@@ -115,17 +115,16 @@ w.filter_def = {
 	}
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
-function f:Event(self, event, ...)
+function f:Event(event, ...)
 	if event == "UNIT_AURA" or event == "PLAYER_TARGET_CHANGED" then
-		f:Scan(self, event, ...)
+		f:Scan(event, ...)
 	elseif event == "ADDON_LOADED" then
-		f:Loaded(self, event, ...)
+		f:Loaded(event, ...)
 	elseif event == "PLAYER_LOGOUT" then
-		f:Save(self, event, ...)
+		f:Save(event, ...)
 	end
 end
-function f:Scan(self, event, ...)
-	local w = Teds_PVP_Spelltimers_Work
+function f:Scan(event, ...)
 	--first, fetch all buffs on target
 	local unit
 	if event == "UNIT_AURA" then
@@ -168,13 +167,13 @@ function f:Scan(self, event, ...)
 		--now, check if we had any that matched filter
 		if next(w.activealerts) ~= nil then
 			--we did match some filters. show the frame (which will start updates)
-			if not self:IsShown() then
-				self:Show()
+			if not f:IsShown() then
+				f:Show()
 			end
 		else
 			--no alerts to show. hide the frame (which stops updates)
-			if self:IsShown() then
-				self:Hide()
+			if f:IsShown() then
+				f:Hide()
 			end
 		end
 		for m,_ in pairs(w.activealerts) do
@@ -186,8 +185,7 @@ function f:Scan(self, event, ...)
 		end
 	end
 end
-function f:Update(self)
-	local w = Teds_PVP_Spelltimers_Work
+function f:Update()
 	--reset the output text
 	w.output = ""
 	local duration
@@ -203,7 +201,7 @@ function f:Update(self)
 		w.output = w.output..string.format("%.1f%s%.1f",duration," - "..t.name.." - ",duration)
 	end
 	--set the text once we have build the complete string
-	self.fontstring:SetText(self.output)
+	f.fontstring:SetText(w.output)
 end
 function f:Loaded()
 
@@ -212,8 +210,8 @@ function f:Save()
 
 end
 --Assign Handlers
-f:SetScript("OnEvent", Event)
-f:SetScript("OnUpdate", Update)
+f:SetScript("OnEvent", f.Event)
+f:SetScript("OnUpdate", f.Update)
 --Register events
 f:RegisterEvent("UNIT_AURA")
 f:RegisterEvent("PLAYER_TARGET_CHANGED")
