@@ -108,12 +108,11 @@ w.filter_def = {
 	--Warrior
 		[23920] = "Spell Reflection",
 		[12975] = "Last Stand",
-		[97462] = "Rallying Cry",
 		[871] = "Shield Wall",
 		[46924] = "Bladestorm", --Added because you are immune to cc
 		[114028] = "Spell Reflection", --Mass Spell Reflection
-		[114030] = "Vigilance",
 		[46947] = "Safeguard",
+		[184364] = "Enraged Regeneration",
 	}
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
