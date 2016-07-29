@@ -1,8 +1,9 @@
 --Teds_PVP_Spelltimers.lua by Zendil-The Underbog (US)
+--Define locals
 local f = Teds_PVP_Spelltimers_Frame
 local m = Teds_PVP_Spelltimers_DragFrame
 local w = {}
-local s = Teds_PVP_Spelltimers_Save or {}
+local s
 --Define variables
 w.activealerts = {}
 --Create list of all defensive cooldowns that alerts will be created for
@@ -203,6 +204,11 @@ function f:Update()
 	--set the text once we have build the complete string
 	f.fontstring:SetText(w.output)
 end
+function f:Loaded(event, addon)
+	--if its our addon that loaded, assign local s to saved vars
+	if addon == "Teds_PvP_Spelltimers" or addon == "Teds_PvP_Spelltimers_Testing" then
+		s = Teds_PVP_Spelltimers_Save
+	end
 function f:Loaded()
 
 end
