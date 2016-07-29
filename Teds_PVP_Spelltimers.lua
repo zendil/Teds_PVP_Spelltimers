@@ -1,8 +1,8 @@
 --Teds_PVP_Spelltimers.lua by Zendil-The Underbog (US)
-Teds_PVP_Spelltimers_Save = {}
 local f = Teds_PVP_Spelltimers_Frame
+local m = Teds_PVP_Spelltimers_DragFrame
 local w = {}
-local s = Teds_PVP_Spelltimers_Save
+local s = Teds_PVP_Spelltimers_Save or {}
 --Define variables
 w.activealerts = {}
 --Create list of all defensive cooldowns that alerts will be created for
