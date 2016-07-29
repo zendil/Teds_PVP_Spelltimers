@@ -102,10 +102,9 @@ w.filter_def = {
 		[207399] = "Ancestral Protection Totem",--id may need some work
 		[192077] = "Wind Rush Totem",--id may need some work
 	--Warlock
-		[48020] = "Soulburn Teleport",
-		[111397] = "Blood Horror",
-		[110913] = "Dark Bargain",
-		[108359] = "Dark Regeneration",
+		[104773] = "Unending Resolve",
+		[108416] = "Dark Pact",
+		[212295] = "Nether Ward",
 	--Warrior
 		[23920] = "Spell Reflection",
 		[12975] = "Last Stand",
