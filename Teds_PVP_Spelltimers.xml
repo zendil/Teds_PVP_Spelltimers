@@ -65,6 +65,30 @@
 					</Anchor>
 				</Anchors>
 			</Button>
+			<Button parentKey="resetbutton" inherits="UIPanelButtonTemplate" text="Reset">
+				<Size>
+					<AbsDimension x="150" y="18" />
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM" relativepoint="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="15" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button parentKey="donebutton" inherits="UIPanelButtonTemplate" text="Done Moving">
+				<Size>
+					<AbsDimension x="150" y="18" />
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM" relativepoint="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="15" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
 		</Frames>
 	</Frame>
 </Ui>
