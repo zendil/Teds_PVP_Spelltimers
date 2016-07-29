@@ -210,18 +210,19 @@ function f:Save()
 
 end
 function Teds_PVP_Spelltimers_DragFrame:Center()
-	local self = Teds_PVP_Spelltimers_DragFrame
-	local _,y = self:GetCenter()
-	self:ClearAllPoints()
-	self:SetPoint("CENTER", UIParent, "BOTTOM", 0, y)
+	local d = Teds_PVP_Spelltimers_DragFrame
+	local _,y = d:GetCenter()
+	d:ClearAllPoints()
+	d:SetPoint("CENTER", UIParent, "BOTTOM", 0, y)
 end
 function Teds_PVP_Spelltimers_DragFrame:Reset()
-	local self = Teds_PVP_Spelltimers_DragFrame
-	self:ClearAllPoints()
-	self:SetPoint("TOP", UIParent, "TOP", 0, -50)
+	local d = Teds_PVP_Spelltimers_DragFrame
+	d:ClearAllPoints()
+	d:SetPoint("TOP", UIParent, "TOP", 0, -50)
 end
 function Teds_PVP_Spelltimers_DragFrame:Done()
-	local self = Teds_PVP_Spelltimers_DragFrame
+	local d = Teds_PVP_Spelltimers_DragFrame
+	
 end
 function f.Mover(self)
 	self:UnregisterEvent("UNIT_AURA")
