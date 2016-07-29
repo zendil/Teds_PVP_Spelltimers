@@ -211,7 +211,7 @@ function f:Save()
 end
 function Teds_PVP_Spelltimers_DragFrame:Center()
 	local self = Teds_PVP_Spelltimers_DragFrame
-	local _,y = frame:GetCenter()
+	local _,y = self:GetCenter()
 	self:ClearAllPoints()
 	self:SetPoint("CENTER", UIParent, "BOTTOM", 0, y)
 end
