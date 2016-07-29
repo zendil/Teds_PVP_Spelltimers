@@ -83,11 +83,10 @@ w.filter_def = {
 		[64901] = "Symbol of Hope",
 	--Rogue
 		[5277] = "Evasion",
-		[1966] = "Feint",
 		[31224] = "Cloak of Shadows",
-		[108212] = "Burst of Speed",
 		[31230] = "Cheat Death",
-		[76577] = "Smoke Bomb",
+		[76577] = "Smoke Bomb",--need to check buff id
+		[2983] = "Sprint",
 	--Shaman
 		[114052] = "Ascendance", --Restoration only
 		--Totems may or may not work; testing required
