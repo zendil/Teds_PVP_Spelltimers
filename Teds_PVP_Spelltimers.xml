@@ -67,5 +67,4 @@
 			</Button>
 		</Frames>
 	</Frame>
-	<Script File="Teds_PVP_Spelltimers.lua" />
 </Ui>
