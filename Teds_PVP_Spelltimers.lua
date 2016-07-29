@@ -3,6 +3,7 @@ Teds_PVP_Spelltimers_Save = {}
 Teds_PVP_Spelltimers_Work = {}
 local f = Teds_PVP_Spelltimers_Frame
 local w = Teds_PVP_Spelltimers_Work
+local s = Teds_PVP_Spelltimers_Save
 --Define variables
 w.activealerts = {}
 --Create list of all defensive cooldowns that alerts will be created for
