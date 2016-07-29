@@ -210,25 +210,20 @@ function f:Save()
 
 end
 function Teds_PVP_Spelltimers_DragFrame:Center()
-	local d = Teds_PVP_Spelltimers_DragFrame
-	local _,y = d:GetCenter()
-	d:ClearAllPoints()
-	d:SetPoint("CENTER", UIParent, "BOTTOM", 0, y)
+	local _,y = m:GetCenter()
+	m:ClearAllPoints()
+	m:SetPoint("CENTER", UIParent, "BOTTOM", 0, y)
 end
 function Teds_PVP_Spelltimers_DragFrame:Reset()
-	local d = Teds_PVP_Spelltimers_DragFrame
-	d:ClearAllPoints()
-	d:SetPoint("TOP", UIParent, "TOP", 0, -50)
+	m:ClearAllPoints()
+	m:SetPoint("TOP", UIParent, "TOP", 0, -50)
 end
 function Teds_PVP_Spelltimers_DragFrame:Done()
-	local d = Teds_PVP_Spelltimers_DragFrame
-	
 end
-function f.Mover(self)
-	self:UnregisterEvent("UNIT_AURA")
-	self:UnregisterEvent("PLAYER_TARGET_CHANGED")
-	self:Hide()
-	local m = Teds_PVP_Spelltimers_DragFrame
+function f:Mover()
+	f:UnregisterEvent("UNIT_AURA")
+	f:UnregisterEvent("PLAYER_TARGET_CHANGED")
+	f:Hide()
 	m:Show()
 	if not m.loaded then
 		m.loaded = true
