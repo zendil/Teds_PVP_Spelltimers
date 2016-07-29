@@ -219,6 +219,12 @@ function Teds_PVP_Spelltimers_DragFrame:Reset()
 	m:SetPoint("TOP", UIParent, "TOP", 0, -50)
 end
 function Teds_PVP_Spelltimers_DragFrame:Done()
+	local x,y = m:GetCenter()
+	m:Hide()
+	f:ClearAllPoints()
+	f:SetPoint("CENTER", UIParent, "BOTTOM", x, y)
+	f:RegisterEvent("UNIT_AURA")
+	f:RegisterEvent("PLAYER_TARGET_CHANGED")
 end
 function f:Mover()
 	f:UnregisterEvent("UNIT_AURA")
