@@ -91,13 +91,16 @@ w.filter_def = {
 		[114052] = "Ascendance", --Restoration only
 		--Totems may or may not work; testing required
 			[108280] = "Healing Tide",
-			[8143] = "Tremor Totem",
 			[98008] = "Spirit Link",
 		[58875] = "Spirit Walk",
 		[79206] = "Spiritwalker's Grace",
 		[108271] = "Astral Shift",
-		[30884] = "Nature's Guardian",
-		[30823] = "Shamanistic Rage",
+		[204331] = "Counterstrike Totem",--id might need some work
+		[210918] = "Ethereal Form",
+		[204336] = "Grounding Totem",--id may need some work
+		[108281] = "Ancestral Guidance",
+		[207399] = "Ancestral Protection Totem",--id may need some work
+		[192077] = "Wind Rush Totem",--id may need some work
 	--Warlock
 		[48020] = "Soulburn Teleport",
 		[111397] = "Blood Horror",
