@@ -209,23 +209,32 @@ end
 function f:Save()
 
 end
-local function CenterFrameHorizontal(frame)
-	local x,y = frame:GetCenter()
-	print("XY:"..x..","..y)
-	local parent = select(2, frame:GetPoint(1))
-	frame:ClearAllPoints()
-	frame:SetPoint("CENTER", relativeTo, "BOTTOM", 0, y)
+function Teds_PVP_Spelltimers_DragFrame.Center(self)
+	local _,y = frame:GetCenter()
+	self:ClearAllPoints()
+	self:SetPoint("CENTER", UIParent, "BOTTOM", 0, y)
 end
-function f:Mover(self)
+function Teds_PVP_Spelltimers_DragFrame.Reset(self)
+	self:SetPoint("TOP", UIParent, "TOP", 0, -50)
+end
+function Teds_PVP_Spelltimers_DragFrame.Done(self)
+	
+end
+function f.Mover(self)
 	self:UnregisterEvent("UNIT_AURA")
 	self:UnregisterEvent("PLAYER_TARGET_CHANGED")
 	self:Hide()
-	local m = CreateFrame("Frame", "Teds_PVP_Spelltimers_DragFrame", UIParent, "Teds_PVP_Spelltimers_DragFrame")
+	local m = Teds_PVP_Spelltimers_DragFrame
+	m:Show()
 	m:RegisterForDrag("LeftButton")
 	m:SetScript("OnDragStart", m.StartMoving)
 	m:SetScript("OnDragStop", m.StopMovingOrSizing)
 	m.centerbutton:RegisterForClicks("AnyDown")
-	m.centerbutton:SetScript("OnClick", function() CenterFrameHorizontal(m) end)
+	m.centerbutton:SetScript("OnClick", m.Center)
+	m.resetbutton:RegisterForClicks("AnyDown")
+	m.resetbutton:SetScript("OnClick", m.reset)
+	m.donebutton:RegisterForClicks("AnyDown")
+	m.donebutton:SetScript("OnClick", m.Done)
 end
 T = f
 --Assign Handlers
