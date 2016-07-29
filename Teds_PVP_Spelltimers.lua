@@ -114,7 +114,7 @@ w.filter_def = {
 	}
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
-local function f:event(self, event, ...)
+function f:event(self, event, ...)
 	local w = Teds_PVP_Spelltimers_Work
 	if event == "UNIT_AURA" or event == "PLAYER_TARGET_CHANGED" then
 		--first, fetch all buffs on target
@@ -178,7 +178,7 @@ local function f:event(self, event, ...)
 		end
 	end
 end
-local function f:update(self)
+function f:update(self)
 	local w = Teds_PVP_Spelltimers_Work
 	--reset the output text
 	w.output = ""
