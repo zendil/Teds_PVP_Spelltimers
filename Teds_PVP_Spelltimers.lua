@@ -217,6 +217,7 @@ function Teds_PVP_Spelltimers_DragFrame:Center()
 end
 function Teds_PVP_Spelltimers_DragFrame:Reset()
 	local self = Teds_PVP_Spelltimers_DragFrame
+	self:ClearAllPoints()
 	self:SetPoint("TOP", UIParent, "TOP", 0, -50)
 end
 function Teds_PVP_Spelltimers_DragFrame:Done()
@@ -234,7 +235,7 @@ function f.Mover(self)
 	m.centerbutton:RegisterForClicks("AnyDown")
 	m.centerbutton:SetScript("OnClick", m.Center)
 	m.resetbutton:RegisterForClicks("AnyDown")
-	m.resetbutton:SetScript("OnClick", m.reset)
+	m.resetbutton:SetScript("OnClick", m.Reset)
 	m.donebutton:RegisterForClicks("AnyDown")
 	m.donebutton:SetScript("OnClick", m.Done)
 end
