@@ -209,6 +209,13 @@ end
 function f:Save()
 
 end
+local function CenterFrameHorizontal(frame)
+	local x,y = frame:GetCenter()
+	print("XY:"..x..","..y)
+	local parent = select(2, frame:GetPoint(1))
+	frame:ClearAllPoints()
+	frame:SetPoint("CENTER", relativeTo, "BOTTOM", 0, y)
+end
 function f:Mover()
 	f:UnregisterEvent("UNIT_AURA")
 	f:UnregisterEvent("PLAYER_TARGET_CHANGED")
@@ -217,6 +224,8 @@ function f:Mover()
 	m:RegisterForDrag("LeftButton")
 	m:SetScript("OnDragStart", m.StartMoving)
 	m:SetScript("OnDragStop", m.StopMovingOrSizing)
+	m.centerbutton:RegisterForClicks("AnyDown")
+	m.centerbutton:SetScript("OnClick", function() CenterFrameHorizontal(m) end)
 end
 T = f
 --Assign Handlers
