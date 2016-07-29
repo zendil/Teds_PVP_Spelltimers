@@ -24,7 +24,7 @@
 			</Layer>
 		</Layers>
 	</Frame>
-	<Frame name="Teds_PVP_Spelltimers_DragFrame" enableMouse="true" movable="true" parent="UIParent" enableKeyboard="false" hidden="false" virtual="true">
+	<Frame name="Teds_PVP_Spelltimers_DragFrame" enableMouse="true" movable="true" parent="UIParent" enableKeyboard="false" hidden="true">
 		<Anchors>
 			<Anchor point="TOP">
 				<Offset>
