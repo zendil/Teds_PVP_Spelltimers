@@ -59,16 +59,20 @@ w.filter_def = {
 		[122278] = "Dampen Harm",
 		[116844] = "Ring of Peace",
 		[116841] = "Tiger's Lust",
---TODO: Update Spells from here on
 	--Paladin
 		[642] = "Divine Shield",
 		[498] = "Divine Protection",
-		[1022] = "Hand of Protection",
-		[1044] = "Hand of Freedom",
-		[6940] = "Hand of Sacrifice",
+		[1022] = "Blessing of Protection",
+		[1044] = "Blessing of Freedom",
+		[6940] = "Blessing of Sacrifice",
 		[31850] = "Ardent Defender",
-		[31821] = "Devotion Aura",
-		[85499] = "Speed of Light",
+		[31821] = "Aura Mastery",
+		[190784] = "Divine Steed",--need proper buff id here (racial?)
+		[86659] = "Guardian of Ancient Kings",
+		[204150] = "Aegis of Light",
+		[204018] = "Blessing of Spellwarding",
+		[210256] = "Blessing of Sanctuary",
+		[228049] = "Guardian of the Forgotten Queen",--verify buff spell id
 	--Priest
 		[81782] = "Power Word: Barrier",
 		[47585] = "Dispersion",
