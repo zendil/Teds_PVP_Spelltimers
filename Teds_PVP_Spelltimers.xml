@@ -52,6 +52,20 @@
 				</FontString>
 			</Layer>
 		</Layers>
+		<Frames>
+			<Button parentKey="centerbutton" inherits="UIPanelButtonTemplate" text="Center Horizontally">
+				<Size>
+					<AbsDimension x="150" y="18" />
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM" relativepoint="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="15" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
 	</Frame>
 	<Script File="Teds_PVP_Spelltimers.lua" />
 </Ui>
