@@ -255,4 +255,28 @@ f:SetScript("OnUpdate", f.Update)
 f:RegisterEvent("UNIT_AURA")
 f:RegisterEvent("PLAYER_TARGET_CHANGED")
 f:RegisterEvent("ADDON_LOADED")
+--Define Slash Command Functions
+local slash = {}
+function slash:move(arg)
+	f:Mover()
+end
+function slash:help(arg)
+	print("TPST>Available commands are: /tpst move, /tpst help")
+end
+--Register Slash Commands
+SLASH_TEDSPVPSPELLTIMERS1 = "/tpst"
+local function SlashHandler(msg, editbox)
+	if msg == "" or msg == nil then
+		slash:help()
+	else
+		local command, arg = msg:match("^(%S*)%s*(.-)$")
+		command = string.lower(command)
+		if slash[command] then
+			slash[command](arg)
+		else
+			print("TPST>Not a recognized command! Try /tpst help")
+		end
+	end
+end
+SlashCmdList["TEDSPVPSPELLTIMERS"] = SlashHandler
 --TODO: Ability to move frame, save position between sessions
