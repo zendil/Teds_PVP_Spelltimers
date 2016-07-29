@@ -123,8 +123,6 @@ function f:Event(event, ...)
 		f:Scan(event, ...)
 	elseif event == "ADDON_LOADED" then
 		f:Loaded(event, ...)
-	elseif event == "PLAYER_LOGOUT" then
-		f:Save(event, ...)
 	end
 end
 function f:Scan(event, ...)
@@ -211,11 +209,6 @@ function f:Loaded(event, addon)
 	if addon == "Teds_PvP_Spelltimers" or addon == "Teds_PvP_Spelltimers_Testing" then
 		s = Teds_PVP_Spelltimers_Save
 	end
-function f:Loaded()
-
-end
-function f:Save()
-
 end
 function Teds_PVP_Spelltimers_DragFrame:Center()
 	local _,y = m:GetCenter()
@@ -260,5 +253,4 @@ f:SetScript("OnUpdate", f.Update)
 f:RegisterEvent("UNIT_AURA")
 f:RegisterEvent("PLAYER_TARGET_CHANGED")
 f:RegisterEvent("ADDON_LOADED")
-f:RegisterEvent("PLAYER_LOGOUT")
 --TODO: Ability to move frame, save position between sessions
