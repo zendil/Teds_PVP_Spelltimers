@@ -79,6 +79,8 @@ w.filter_def = {
 		[47788] = "Guardian Spirit",
 		[33206] = "Pain Suppression",
 		[20711] = "Spirit of Redemption",
+		[200183] = "Apotheosis",
+		[64901] = "Symbol of Hope",
 	--Rogue
 		[5277] = "Evasion",
 		[1966] = "Feint",
