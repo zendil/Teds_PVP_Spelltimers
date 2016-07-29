@@ -1,5 +1,5 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
-	<Frame name="Teds_PVP_Spelltimers_Frame" enableMouse="false" movable="false" parent="UIParent" enableKeyboard="false" hidden="false">
+	<Frame name="Teds_PVP_Spelltimers_Frame" enableMouse="false" movable="true" parent="UIParent" enableKeyboard="false" hidden="true" clampedToScreen="true">
 		<Anchors>
 			<Anchor point="TOP">
 				<!-- NYI: --><!--This offest is the default value, it will be changed via LUA to the saved position-->
@@ -24,7 +24,7 @@
 			</Layer>
 		</Layers>
 	</Frame>
-	<Frame name="Teds_PVP_Spelltimers_DragFrame" enableMouse="true" movable="true" parent="UIParent" enableKeyboard="false" hidden="true">
+	<Frame name="Teds_PVP_Spelltimers_DragFrame" enableMouse="true" movable="true" parent="UIParent" enableKeyboard="false" hidden="true" clampedToScreen="true">
 		<Anchors>
 			<Anchor point="TOP">
 				<Offset>
