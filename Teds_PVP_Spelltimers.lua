@@ -119,6 +119,7 @@ w.filter_def = {
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
 function f:Event(event, ...)
+	--switch by what event has occured
 	if event == "UNIT_AURA" or event == "PLAYER_TARGET_CHANGED" then
 		f:Scan(event, ...)
 	elseif event == "ADDON_LOADED" then
@@ -211,34 +212,52 @@ function f:Loaded(event, addon)
 	end
 end
 function Teds_PVP_Spelltimers_DragFrame:Center()
+	--get current y position
 	local _,y = m:GetCenter()
+	--reset and move to center, maintaining y position
 	m:ClearAllPoints()
 	m:SetPoint("CENTER", UIParent, "BOTTOM", 0, y)
 end
 function Teds_PVP_Spelltimers_DragFrame:Reset()
+	--reset and move to default position
 	m:ClearAllPoints()
 	m:SetPoint("TOP", UIParent, "TOP", 0, -50)
 end
 function Teds_PVP_Spelltimers_DragFrame:Done()
+	--get the mover's position
 	local x,y = m:GetCenter()
+	--hide the mover
 	m:Hide()
+	--reset the frame
 	f:ClearAllPoints()
+	--move the frame to the new spot
 	f:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
+	--reregister events
 	f:RegisterEvent("UNIT_AURA")
 	f:RegisterEvent("PLAYER_TARGET_CHANGED")
 end
 function f:Mover()
+	--Unregister events so we don't activate while moving
 	f:UnregisterEvent("UNIT_AURA")
 	f:UnregisterEvent("PLAYER_TARGET_CHANGED")
+	--get position to set the mover
+	local x,y = f:GetCenter()
+	--hide frame
 	f:Hide()
+	--put the mover in the right spot
 	m:ClearAllPoints()
 	m:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
+	--show the mover
 	m:Show()
+	--if this is the mover's first load then we also have to set it up
 	if not m.loaded then
+		--ok, now we're loaded
 		m.loaded = true
+		--set up dragging
 		m:RegisterForDrag("LeftButton")
 		m:SetScript("OnDragStart", m.StartMoving)
 		m:SetScript("OnDragStop", m.StopMovingOrSizing)
+		--set up buttons and handlers
 		m.centerbutton:RegisterForClicks("AnyDown")
 		m.centerbutton:SetScript("OnClick", m.Center)
 		m.resetbutton:RegisterForClicks("AnyDown")
@@ -247,6 +266,7 @@ function f:Mover()
 		m.donebutton:SetScript("OnClick", m.Done)
 	end
 end
+--testing assignment
 T = f
 --Assign Handlers
 f:SetScript("OnEvent", f.Event)
