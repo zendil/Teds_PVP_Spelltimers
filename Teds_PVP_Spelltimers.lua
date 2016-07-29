@@ -230,15 +230,18 @@ function f.Mover(self)
 	self:Hide()
 	local m = Teds_PVP_Spelltimers_DragFrame
 	m:Show()
-	m:RegisterForDrag("LeftButton")
-	m:SetScript("OnDragStart", m.StartMoving)
-	m:SetScript("OnDragStop", m.StopMovingOrSizing)
-	m.centerbutton:RegisterForClicks("AnyDown")
-	m.centerbutton:SetScript("OnClick", m.Center)
-	m.resetbutton:RegisterForClicks("AnyDown")
-	m.resetbutton:SetScript("OnClick", m.Reset)
-	m.donebutton:RegisterForClicks("AnyDown")
-	m.donebutton:SetScript("OnClick", m.Done)
+	if not m.loaded then
+		m.loaded = true
+		m:RegisterForDrag("LeftButton")
+		m:SetScript("OnDragStart", m.StartMoving)
+		m:SetScript("OnDragStop", m.StopMovingOrSizing)
+		m.centerbutton:RegisterForClicks("AnyDown")
+		m.centerbutton:SetScript("OnClick", m.Center)
+		m.resetbutton:RegisterForClicks("AnyDown")
+		m.resetbutton:SetScript("OnClick", m.Reset)
+		m.donebutton:RegisterForClicks("AnyDown")
+		m.donebutton:SetScript("OnClick", m.Done)
+	end
 end
 T = f
 --Assign Handlers
