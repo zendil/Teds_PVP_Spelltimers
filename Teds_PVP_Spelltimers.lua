@@ -4,6 +4,8 @@ local f = Teds_PVP_Spelltimers_Frame
 local m = Teds_PVP_Spelltimers_DragFrame
 local w = {}
 local s
+--Set frame as user placed (this might be default? unsure)
+f:SetUserPlaced(true)
 --Define variables
 w.activealerts = {}
 --Create list of all defensive cooldowns that alerts will be created for
