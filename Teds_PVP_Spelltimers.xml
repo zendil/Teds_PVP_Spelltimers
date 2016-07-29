@@ -13,13 +13,42 @@
 		</Size>
 		<Layers>
 			<Layer level="ARTWORK">
-				<FontString name="$parentFontString" parentKey="fontstring" text="ALERT" outline="NORMAL" font="Fonts\FRIZQT__.TTF" justifyV="TOP" justifyH="CENTER">
+				<FontString parentKey="fontstring" text="ALERT" outline="NORMAL" font="Fonts\FRIZQT__.TTF" justifyV="TOP" justifyH="CENTER">
 					<Anchors>
 						<Anchor point="TOPLEFT" relativepoint="TOPLEFT" />
 						<Anchor point="BOTTOMRIGHT" relativepoint="BOTTOMRIGHT" />
 					</Anchors>
 					<FontHeight val="45" />
 					<Color r="1.0" g="0.0" b="0.0" />
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+	<Frame name="Teds_PVP_Spelltimers_DragFrame" enableMouse="true" movable="true" parent="UIParent" enableKeyboard="false" hidden="false" virtual="true">
+		<Anchors>
+			<Anchor point="TOP">
+				<Offset>
+					<AbsDimension x="0" y="-50" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Size>
+			<AbsDimension x="1000" y="225" />
+		</Size>
+		<Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<EdgeSize val="16"/>
+			<TileSize val="32"/>
+			<BackgroundInsets left="5" right="5" top="5" bottom="5"/>
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString  parentKey="fontstring" text="Ted's PvP Spelltimers Mover|n|n|nDrag to Reposition" outline="NORMAL" font="Fonts\FRIZQT__.TTF" justifyV="MIDDLE" justifyH="CENTER">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativepoint="TOPLEFT" />
+						<Anchor point="BOTTOMRIGHT" relativepoint="BOTTOMRIGHT" />
+					</Anchors>
+					<FontHeight val="18" />
+					<Color r="1.0" g="1.0" b="1.0" />
 				</FontString>
 			</Layer>
 		</Layers>
