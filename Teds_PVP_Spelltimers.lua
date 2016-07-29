@@ -116,71 +116,78 @@ w.filter_def = {
 	}
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
-function f:event(self, event, ...)
-	local w = Teds_PVP_Spelltimers_Work
+function f:Event(self, event, ...)
 	if event == "UNIT_AURA" or event == "PLAYER_TARGET_CHANGED" then
-		--first, fetch all buffs on target
-		local unit
-		if event == "UNIT_AURA" then
-			unit = ...
-		else
-			unit = "target"
+		f:Scan(self, event, ...)
+	elseif event == "ADDON_LOADED" then
+		f:Loaded(self, event, ...)
+	elseif event == "PLAYER_LOGOUT" then
+		f:Save(self, event, ...)
+	end
+end
+function f:Scan(self, event, ...)
+	local w = Teds_PVP_Spelltimers_Work
+	--first, fetch all buffs on target
+	local unit
+	if event == "UNIT_AURA" then
+		unit = ...
+	else
+		unit = "target"
+	end
+	if unit == "target" then --TODO: (maybe?) only update/active/show for hostile targets, not friendlies
+		--this event affects our target, so we want to update now
+		--clear out cached values for replacement with fresh ones
+		w.targetbuffs = {}
+		w.targetstealable = {}
+		--store the old values to check when theres new ones
+		w.activealerts_old = w.activealerts --creates a reference, not a copy. but it works?
+		w.activealerts = {}
+		--check all buffs
+		for i=1,40 do
+			local name,_,_,_,_,_,expire,_,steal,_,id = UnitAura("target",i,"HELPFUL")
+			if id then
+				--if buff exists (id is within bounds) then cache it
+				w.targetbuffs[i] = {["id"] = id,["expire"] = expire}
+				if steal == 1 then
+					--buff is stealable so store that too
+					w.targetstealable[i] = name
+					--this will be used in the future (future version)
+				end
+			end
 		end
-		if unit == "target" then --TODO: (maybe?) only update/active/show for hostile targets, not friendlies
-			--this event affects our target, so we want to update now
-			--clear out cached values for replacement with fresh ones
-			w.targetbuffs = {}
-			w.targetstealable = {}
-			--store the old values to check when theres new ones
-			w.activealerts_old = w.activealerts --creates a reference, not a copy. but it works?
-			w.activealerts = {}
-			--check all buffs
-			for i=1,40 do
-				local name,_,_,_,_,_,expire,_,steal,_,id = UnitAura("target",i,"HELPFUL")
-				if id then
-					--if buff exists (id is within bounds) then cache it
-					w.targetbuffs[i] = {["id"] = id,["expire"] = expire}
-					if steal == 1 then
-						--buff is stealable so store that too
-						w.targetstealable[i] = name
-						--this will be used in the future (future version)
-					end
+		--now, filter for the ones we want
+		if w.targetbuffs then
+			--if we have buffs on target
+			for _,v in pairs(w.targetbuffs) do
+				--iterate through the target's cached buffs
+				if w.filter_def[v.id] and (v.expire - GetTime()) > 0 then
+					--buff is in filter and has non-negative duration -> create alert
+					w.activealerts[v.id] = {["name"] = w.filter_def[v.id],["expire"] = v.expire}
 				end
 			end
-			--now, filter for the ones we want
-			if w.targetbuffs then
-				--if we have buffs on target
-				for _,v in pairs(w.targetbuffs) do
-					--iterate through the target's cached buffs
-					if w.filter_def[v.id] and (v.expire - GetTime()) > 0 then
-						--buff is in filter and has non-negative duration -> create alert
-						w.activealerts[v.id] = {["name"] = w.filter_def[v.id],["expire"] = v.expire}
-					end
-				end
+		end
+		--now, check if we had any that matched filter
+		if next(w.activealerts) ~= nil then
+			--we did match some filters. show the frame (which will start updates)
+			if not self:IsShown() then
+				self:Show()
 			end
-			--now, check if we had any that matched filter
-			if next(w.activealerts) ~= nil then
-				--we did match some filters. show the frame (which will start updates)
-				if not self:IsShown() then
-					self:Show()
-				end
-			else
-				--no alerts to show. hide the frame (which stops updates)
-				if self:IsShown() then
-					self:Hide()
-				end
+		else
+			--no alerts to show. hide the frame (which stops updates)
+			if self:IsShown() then
+				self:Hide()
 			end
-			for m,_ in pairs(w.activealerts) do
-				--we have to iterate to check for new entries
-				if not w.activealerts_old[m] then
-					--we have new alerts. play sound
-					PlaySoundFile("Interface\\Addons\\Teds_PVP_Spelltimers\\media\\BoxingArenaSound.ogg","Master")
-				end
+		end
+		for m,_ in pairs(w.activealerts) do
+			--we have to iterate to check for new entries
+			if not w.activealerts_old[m] then
+				--we have new alerts. play sound
+				PlaySoundFile("Interface\\Addons\\Teds_PVP_Spelltimers\\media\\BoxingArenaSound.ogg","Master")
 			end
 		end
 	end
 end
-function f:update(self)
+function f:Update(self)
 	local w = Teds_PVP_Spelltimers_Work
 	--reset the output text
 	w.output = ""
@@ -199,10 +206,18 @@ function f:update(self)
 	--set the text once we have build the complete string
 	self.fontstring:SetText(self.output)
 end
+function f:Loaded()
+
+end
+function f:Save()
+
+end
 --Assign Handlers
-f:SetScript("OnEvent", event)
-f:SetScript("OnUpdate", update)
+f:SetScript("OnEvent", Event)
+f:SetScript("OnUpdate", Update)
 --Register events
 f:RegisterEvent("UNIT_AURA")
 f:RegisterEvent("PLAYER_TARGET_CHANGED")
+f:RegisterEvent("ADDON_LOADED")
+f:RegisterEvent("PLAYER_LOGOUT")
 --TODO: Ability to move frame, save position between sessions
