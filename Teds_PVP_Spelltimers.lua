@@ -48,9 +48,10 @@ w.filter_def = {
 		[54216] = "Master's Call",
 		[53480] = "Roar of Sacrifice",
 	--Mage
+		--all working (30JUL2016)
 		[45438] = "Ice Block",
 		[87023] = "Cauterize",
-		[198111] = "Temporal Shield",
+		[198111] = "Temporal Shield", --untested (honor talent)
 		[110960] = "Greater Invisibility",
 	--Monk
 		[115203] = "Fortifying Brew",
