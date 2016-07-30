@@ -110,11 +110,12 @@ w.filter_def = {
 		[108416] = "Dark Pact",
 		[212295] = "Nether Ward",
 	--Warrior
+		--All working (30JUL2016)
 		[23920] = "Spell Reflection",
 		[12975] = "Last Stand",
 		[871] = "Shield Wall",
 		[227847] = "Bladestorm", --Added because you are immune to cc
-		[114028] = "Spell Reflection", --Mass Spell Reflection
+		[114028] = "Spell Reflection", --Mass Spell Reflection --untested (honor talent)
 		[223658] = "Safeguard",
 		[184364] = "Enraged Regeneration",
 		[125565] = "Demoralizing Shout",
