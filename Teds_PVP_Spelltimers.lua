@@ -43,13 +43,13 @@ w.filter_def = {
 		[106898] = "Stampeding Roar",
 	--Hunter
 		[186265] = "Aspect of the Turtle",
-		[186257] = "Aspect of the Cheetah",
+		[186257] = "Aspect of the Cheetah", --works
 		[109215] = "Posthaste",
 		[54216] = "Master's Call",
 		[53480] = "Roar of Sacrifice",
 	--Mage
 		[45438] = "Ice Block",
-		[86949] = "Cauterize",
+		[87023] = "Cauterize",
 		[198111] = "Temporal Shield",
 		[110960] = "Greater Invisibility",
 	--Monk
