@@ -115,7 +115,7 @@ w.filter_def = {
 		[871] = "Shield Wall",
 		[227847] = "Bladestorm", --Added because you are immune to cc
 		[114028] = "Spell Reflection", --Mass Spell Reflection
-		[46947] = "Safeguard",
+		[223658] = "Safeguard",
 		[184364] = "Enraged Regeneration",
 		[125565] = "Demoralizing Shout",
 	}
