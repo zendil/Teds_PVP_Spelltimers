@@ -119,6 +119,7 @@ w.filter_def = {
 		[223658] = "Safeguard",
 		[184364] = "Enraged Regeneration",
 		[125565] = "Demoralizing Shout",
+		[97463] = "Commanding Shout",
 	}
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
