@@ -117,6 +117,7 @@ w.filter_def = {
 		[114028] = "Spell Reflection", --Mass Spell Reflection
 		[46947] = "Safeguard",
 		[184364] = "Enraged Regeneration",
+		[125565] = "Demoralizing Shout",
 	}
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
