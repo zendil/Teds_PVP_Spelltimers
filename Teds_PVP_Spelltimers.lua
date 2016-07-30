@@ -24,6 +24,7 @@ w.filter_def = {
 		[209426] = "Darkness",
 		[218256] = "Empower Wards",
 	--Death Knight
+		--All working (30JUL2016)
 		[48792] = "Icebound Fortitude",
 		[48707] = "Anti-Magic Shell",
 		[55233] = "Vampiric Blood",
