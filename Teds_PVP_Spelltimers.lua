@@ -115,6 +115,7 @@ w.filter_def = {
 		[12975] = "Last Stand",
 		[871] = "Shield Wall",
 		[227847] = "Bladestorm", --Added because you are immune to cc
+		[46924] = "Bladestorm", --seperate fury version?
 		[114028] = "Spell Reflection", --Mass Spell Reflection --untested (honor talent)
 		[223658] = "Safeguard",
 		[184364] = "Enraged Regeneration",
