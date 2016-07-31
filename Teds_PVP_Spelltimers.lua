@@ -107,9 +107,10 @@ w.filter_def = {
 		[207498] = "Ancestral Protection Totem",
 		[192082] = "Wind Rush Totem",
 	--Warlock
+		--All working (31JUL2016)
 		[104773] = "Unending Resolve",
 		[108416] = "Dark Pact",
-		[212295] = "Nether Ward",
+		[212295] = "Nether Ward",--untested (honor talent)
 	--Warrior
 		--All working (30JUL2016)
 		[23920] = "Spell Reflection",
