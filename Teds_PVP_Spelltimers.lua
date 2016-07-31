@@ -93,8 +93,8 @@ w.filter_def = {
 		[2983] = "Sprint",
 	--Shaman
 		[114052] = "Ascendance", --Restoration only
-		[108280] = "Healing Tide",
-		[98007] = "Spirit Link",
+		--[108280] = "Healing Tide",--healing tide gives no buff, cannot be detected
+		[98007] = "Spirit Link",--
 		[58875] = "Spirit Walk",
 		[79206] = "Spiritwalker's Grace",
 		[108271] = "Astral Shift",
