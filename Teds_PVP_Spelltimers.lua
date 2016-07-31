@@ -95,7 +95,7 @@ w.filter_def = {
 		[114052] = "Ascendance", --Restoration only
 		--Totems may or may not work; testing required
 			[108280] = "Healing Tide",
-			[98008] = "Spirit Link",
+			[98007] = "Spirit Link",
 		[58875] = "Spirit Walk",
 		[79206] = "Spiritwalker's Grace",
 		[108271] = "Astral Shift",
