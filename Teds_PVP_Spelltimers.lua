@@ -78,7 +78,7 @@ w.filter_def = {
 		[210256] = "Blessing of Sanctuary",
 		[228049] = "Guardian of the Forgotten Queen",--verify buff spell id
 	--Priest
-		[81782] = "Power Word: Barrier",
+		[81782] = "Power Word: Barrier",--correct id, not working
 		[47585] = "Dispersion",
 		[47788] = "Guardian Spirit",
 		[33206] = "Pain Suppression",
