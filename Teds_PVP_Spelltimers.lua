@@ -92,18 +92,19 @@ w.filter_def = {
 		[76577] = "Smoke Bomb",--need to check buff id
 		[2983] = "Sprint",
 	--Shaman
+		--All working (30JUL2016)
 		[114052] = "Ascendance", --Restoration only
 		--[108280] = "Healing Tide",--healing tide gives no buff, cannot be detected
 		[98007] = "Spirit Link Totem",
-		[204293] = "Spirit Link",
+		[204293] = "Spirit Link",--not tested (honor talent)
 		[58875] = "Spirit Walk",
 		[79206] = "Spiritwalker's Grace",
 		[108271] = "Astral Shift",
-		[204331] = "Counterstrike Totem",--id might need some work
+		[204331] = "Counterstrike Totem",--id might need some work --not tested (honor talent)
 		[210918] = "Ethereal Form",
-		[204336] = "Grounding Totem",--id may need some work
+		[204336] = "Grounding Totem",--id may need some work --not tested (honor talent)
 		[108281] = "Ancestral Guidance",
-		[207498] = "Ancestral Protection Totem",--id may need some work
+		[207498] = "Ancestral Protection Totem",
 		[192082] = "Wind Rush Totem",
 	--Warlock
 		[104773] = "Unending Resolve",
