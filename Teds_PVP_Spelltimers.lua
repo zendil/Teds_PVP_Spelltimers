@@ -102,7 +102,7 @@ w.filter_def = {
 		[210918] = "Ethereal Form",
 		[204336] = "Grounding Totem",--id may need some work
 		[108281] = "Ancestral Guidance",
-		[207399] = "Ancestral Protection Totem",--id may need some work
+		[207498] = "Ancestral Protection Totem",--id may need some work
 		[192077] = "Wind Rush Totem",--id may need some work
 	--Warlock
 		[104773] = "Unending Resolve",
