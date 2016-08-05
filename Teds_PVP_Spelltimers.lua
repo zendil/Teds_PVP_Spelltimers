@@ -64,11 +64,12 @@ w.filter_def = {
 		[116844] = "Ring of Peace",
 		[116841] = "Tiger's Lust",
 	--Paladin
+		--Certify all working 05AUG2016
 		[642] = "Divine Shield",
 		[498] = "Divine Protection",
 		[1022] = "Blessing of Protection",
 		[1044] = "Blessing of Freedom",
-		[6940] = "Blessing of Sacrifice",
+		[6940] = "Blessing of Sacrifice",--not tested (need a party member)
 		[31850] = "Ardent Defender",
 		[31821] = "Aura Mastery",
 		[221886] = "Divine Steed",--working on blood elf, could be racial (further testing needed)
@@ -77,7 +78,7 @@ w.filter_def = {
 		[204335] = "Aegis of Light",--Buff
 		[204018] = "Blessing of Spellwarding",
 		[210256] = "Blessing of Sanctuary",--spell removed?
-		[228049] = "Guardian of the Forgotten Queen",--verify buff spell id
+		[228049] = "Guardian of the Forgotten Queen",--verify buff spell id --not tested (honor talent)
 		[205191] = "Eye for an Eye",
 	--Priest
 		--All working (31JUL2016)
