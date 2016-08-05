@@ -78,6 +78,7 @@ w.filter_def = {
 		[204018] = "Blessing of Spellwarding",
 		[210256] = "Blessing of Sanctuary",--spell removed?
 		[228049] = "Guardian of the Forgotten Queen",--verify buff spell id
+		[205191] = "Eye for an Eye",
 	--Priest
 		--All working (31JUL2016)
 		[81782] = "Power Word: Barrier",--correct id, not working
