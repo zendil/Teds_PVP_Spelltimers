@@ -13,7 +13,6 @@ w.activealerts = {}
 	--To remove a spell just delete or comment out it's line
 	--Note when adding your own spells that the mechanism by which spells are tracked is as -BUFFS- on your -TARGET-
 		--i.e. if you wanted to track "Marked for Death", it would not work as this creates a -DEBUFF- on the -PLAYER-
---TODO: PvP talents for all classes
 w.filter_def = {
 	--Demon Hunter
 		[188501] = "Spectral Sight",
@@ -311,4 +310,3 @@ local function SlashHandler(msg, editbox)
 	end
 end
 SlashCmdList["TEDSPVPSPELLTIMERS"] = SlashHandler
---TODO: Ability to move frame, save position between sessions
