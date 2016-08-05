@@ -76,7 +76,7 @@ w.filter_def = {
 		[204150] = "Aegis of Light",--Source
 		[204335] = "Aegis of Light",--Buff
 		[204018] = "Blessing of Spellwarding",
-		[210256] = "Blessing of Sanctuary",
+		[210256] = "Blessing of Sanctuary",--spell removed?
 		[228049] = "Guardian of the Forgotten Queen",--verify buff spell id
 	--Priest
 		--All working (31JUL2016)
