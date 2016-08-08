@@ -7,6 +7,7 @@ local w = {}
 local s
 --Set frame as user placed (this might be default? unsure)
 f:SetUserPlaced(true)
+m:SetUserPlaced(true)
 --Define variables
 w.activealerts = {}
 --Create list of all defensive cooldowns that alerts will be created for
