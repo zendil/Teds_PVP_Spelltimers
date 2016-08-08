@@ -224,6 +224,7 @@ function f:Loaded(event, addon)
 		s = Teds_PVP_Spelltimers_Save
 	end
 end
+function m:Center()
 function Teds_PVP_Spelltimers_DragFrame:Center()
 	--get current y position
 	local _,y = m:GetCenter()
@@ -231,7 +232,7 @@ function Teds_PVP_Spelltimers_DragFrame:Center()
 	m:ClearAllPoints()
 	m:SetPoint("CENTER", UIParent, "BOTTOM", 0, y)
 end
-function Teds_PVP_Spelltimers_DragFrame:Reset()
+function m:Reset()
 	--reset and move to default position
 	m:ClearAllPoints()
 	m:SetPoint("TOP", UIParent, "TOP", 0, -50)
