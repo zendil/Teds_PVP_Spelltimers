@@ -285,6 +285,8 @@ function f:Mover()
 		--reregister events
 		f:RegisterEvent("UNIT_AURA")
 		f:RegisterEvent("PLAYER_TARGET_CHANGED")
+		--save the position in case it isnt saved by blizzard
+		s.savedpos = f:GetCenter()
 	end
 end
 --testing assignment
