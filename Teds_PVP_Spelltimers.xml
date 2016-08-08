@@ -2,7 +2,6 @@
 	<Frame name="Teds_PVP_Spelltimers_Frame" enableMouse="false" movable="true" parent="UIParent" enableKeyboard="false" hidden="true" clampedToScreen="true">
 		<Anchors>
 			<Anchor point="TOP">
-				<!-- NYI: --><!--This offest is the default value, it will be changed via LUA to the saved position-->
 				<Offset>
 					<AbsDimension x="0" y="-50" />
 				</Offset>
