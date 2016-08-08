@@ -91,4 +91,14 @@
 			</Button>
 		</Frames>
 	</Frame>
+	<Frame name="Teds_PVP_Spelltimers_Config_Frame">
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString  parentKey="fontstring" text="Ted's PvP Spelltimers Configuration" outline="NORMAL" font="Fonts\FRIZQT__.TTF" justifyV="MIDDLE" justifyH="CENTER">
+					<FontHeight val="18" />
+					<Color r="1.0" g="1.0" b="1.0" />
+				</FontString>
+			</Layer>
+		</Layers>
+    </Frame>
 </Ui>
