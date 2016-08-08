@@ -219,9 +219,17 @@ function f:Update()
 	f.fontstring:SetText(w.output)
 end
 function f:Loaded(event, addon)
-	--if its our addon that loaded, assign local s to saved vars
+	--make sure its our addon that loaded
 	if addon == "Teds_PvP_Spelltimers" or addon == "Teds_PvP_Spelltimers_Testing" then
+		--set local s to the savedvariable
 		s = Teds_PVP_Spelltimers_Save
+		--check if the frame is in the right spot
+		if s.savedpos then
+			if f:GetCenter() ~= s.savedpos then
+				--its in the wrong spot, so move it
+				f:SetPoint("CENTER", UIParent, "BOTTOMLEFT", s.savedpos)
+			end
+		end
 	end
 end
 function m:Center()
