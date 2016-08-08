@@ -6,6 +6,7 @@ InterfaceOptions_AddCategory(c)
 --Define locals
 local f = Teds_PVP_Spelltimers_Frame
 local m = Teds_PVP_Spelltimers_DragFrame
+local c = Teds_PVP_Spelltimers_Config_Frame
 local w = {}
 local s
 --Set frame as user placed (this might be default? unsure)
