@@ -237,47 +237,54 @@ function m:Reset()
 	m:ClearAllPoints()
 	m:SetPoint("TOP", UIParent, "TOP", 0, -50)
 end
-function Teds_PVP_Spelltimers_DragFrame:Done()
-	--get the mover's position
-	local x,y = m:GetCenter()
-	--hide the mover
-	m:Hide()
-	--reset the frame
-	f:ClearAllPoints()
-	--move the frame to the new spot
-	f:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
-	--reregister events
-	f:RegisterEvent("UNIT_AURA")
-	f:RegisterEvent("PLAYER_TARGET_CHANGED")
+function m:Done()
+	f:Mover()
 end
 function f:Mover()
-	--Unregister events so we don't activate while moving
-	f:UnregisterEvent("UNIT_AURA")
-	f:UnregisterEvent("PLAYER_TARGET_CHANGED")
-	--get position to set the mover
-	local x,y = f:GetCenter()
-	--hide frame
-	f:Hide()
-	--put the mover in the right spot
-	m:ClearAllPoints()
-	m:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
-	--show the mover
-	m:Show()
-	--if this is the mover's first load then we also have to set it up
-	if not m.loaded then
-		--ok, now we're loaded
-		m.loaded = true
-		--set up dragging
-		m:RegisterForDrag("LeftButton")
-		m:SetScript("OnDragStart", m.StartMoving)
-		m:SetScript("OnDragStop", m.StopMovingOrSizing)
-		--set up buttons and handlers
-		m.centerbutton:RegisterForClicks("AnyDown")
-		m.centerbutton:SetScript("OnClick", m.Center)
-		m.resetbutton:RegisterForClicks("AnyDown")
-		m.resetbutton:SetScript("OnClick", m.Reset)
-		m.donebutton:RegisterForClicks("AnyDown")
-		m.donebutton:SetScript("OnClick", m.Done)
+	--check if were already moving
+	if not m:IsShown() then
+	--we are not moving yet
+		--Unregister events so we don't activate while moving
+		f:UnregisterEvent("UNIT_AURA")
+		f:UnregisterEvent("PLAYER_TARGET_CHANGED")
+		--get position to set the mover
+		local x,y = f:GetCenter()
+		--hide frame
+		f:Hide()
+		--put the mover in the right spot
+		m:ClearAllPoints()
+		m:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
+		--show the mover
+		m:Show()
+		--if this is the mover's first load then we also have to set it up
+		if not m.loaded then
+			--ok, now we're loaded
+			m.loaded = true
+			--set up dragging
+			m:RegisterForDrag("LeftButton")
+			m:SetScript("OnDragStart", m.StartMoving)
+			m:SetScript("OnDragStop", m.StopMovingOrSizing)
+			--set up buttons and handlers
+			m.centerbutton:RegisterForClicks("AnyDown")
+			m.centerbutton:SetScript("OnClick", m.Center)
+			m.resetbutton:RegisterForClicks("AnyDown")
+			m.resetbutton:SetScript("OnClick", m.Reset)
+			m.donebutton:RegisterForClicks("AnyDown")
+			m.donebutton:SetScript("OnClick", m.Done)
+		end
+	else
+	--we are already moving
+		--get the mover's position
+		local x,y = m:GetCenter()
+		--hide the mover
+		m:Hide()
+		--reset the frame
+		f:ClearAllPoints()
+		--move the frame to the new spot
+		f:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
+		--reregister events
+		f:RegisterEvent("UNIT_AURA")
+		f:RegisterEvent("PLAYER_TARGET_CHANGED")
 	end
 end
 --testing assignment
