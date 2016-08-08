@@ -233,7 +233,6 @@ function f:Loaded(event, addon)
 	end
 end
 function m:Center()
-function Teds_PVP_Spelltimers_DragFrame:Center()
 	--get current y position
 	local _,y = m:GetCenter()
 	--reset and move to center, maintaining y position
@@ -333,3 +332,18 @@ SlashCmdList["TEDSPVPSPELLTIMERS"] = SlashHandler
 --Register Interface Options Panel
 --Hook in options frame
 c.name = "Ted's PVP Spelltimers"
+InterfaceOptions_AddCategory(c)
+--move button
+function c.movebutton:Click()
+	f:Mover()
+end
+c.movebutton:RegisterForClicks("AnyDown")
+c.movebutton:SetScript("OnClick", c.movebutton.Click)
+--reset button
+function c.resetbutton:Click()
+	m:Reset()
+end
+c.resetbutton:RegisterForClicks("AnyDown")
+c.resetbutton:SetScript("OnClick", c.resetbutton.Click)
+--testing open when reload
+InterfaceOptionsFrame_OpenToCategory(c)
