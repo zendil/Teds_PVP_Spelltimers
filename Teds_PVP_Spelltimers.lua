@@ -1,8 +1,4 @@
 --Teds_PVP_Spelltimers.lua by Zendil-The Underbog (US)
---Hook in options frame
-local c = Teds_PVP_Spelltimers_Config_Frame
-c.name = "Ted's PVP Spelltimers"
-InterfaceOptions_AddCategory(c)
 --Define locals
 local f = Teds_PVP_Spelltimers_Frame
 local m = Teds_PVP_Spelltimers_DragFrame
@@ -315,3 +311,6 @@ local function SlashHandler(msg, editbox)
 	end
 end
 SlashCmdList["TEDSPVPSPELLTIMERS"] = SlashHandler
+--Register Interface Options Panel
+--Hook in options frame
+c.name = "Ted's PVP Spelltimers"
