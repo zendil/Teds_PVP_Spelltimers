@@ -91,11 +91,52 @@
 		</Frames>
 	</Frame>
 	<Frame name="Teds_PVP_Spelltimers_Config_Frame">
+		<Frames>
+			<Button parentKey="movebutton" inherits="UIPanelButtonTemplate" text="Toggle Move Alert Frame">
+				<Size>
+					<AbsDimension x="200" y="22" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="-110" y="-30" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button parentKey="resetbutton" inherits="UIPanelButtonTemplate" text="Reset Alert Frame">
+				<Size>
+					<AbsDimension x="200" y="22" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="110" y="-30" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
 		<Layers>
 			<Layer level="ARTWORK">
-				<FontString  parentKey="fontstring" text="Ted's PvP Spelltimers Configuration" outline="NORMAL" font="Fonts\FRIZQT__.TTF" justifyV="MIDDLE" justifyH="CENTER">
+				<FontString  parentKey="titletext" text="Ted's PVP Spelltimers" outline="NORMAL" font="Fonts\FRIZQT__.TTF" justifyV="MIDDLE" justifyH="CENTER">
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="0" y="-7" />
+							</Offset>
+						</Anchor>
+						<Anchor point="TOPRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="-7" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Size>
+						<AbsDimension y="18" />
+					</Size>
 					<FontHeight val="18" />
-					<Color r="1.0" g="1.0" b="1.0" />
+					<Color r="1.0" g="1.0" b="0.0" />
 				</FontString>
 			</Layer>
 		</Layers>
