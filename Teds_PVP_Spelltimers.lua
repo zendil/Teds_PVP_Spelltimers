@@ -2,10 +2,12 @@
 --Define locals
 local f = Teds_PVP_Spelltimers_Frame
 local m = Teds_PVP_Spelltimers_DragFrame
+local c = Teds_PVP_Spelltimers_Config_Frame
 local w = {}
 local s
 --Set frame as user placed (this might be default? unsure)
 f:SetUserPlaced(true)
+m:SetUserPlaced(true)
 --Define variables
 w.activealerts = {}
 --Create list of all defensive cooldowns that alerts will be created for
@@ -217,64 +219,81 @@ function f:Update()
 	f.fontstring:SetText(w.output)
 end
 function f:Loaded(event, addon)
-	--if its our addon that loaded, assign local s to saved vars
+	--make sure its our addon that loaded
 	if addon == "Teds_PvP_Spelltimers" or addon == "Teds_PvP_Spelltimers_Testing" then
+		--set local s to the savedvariable
 		s = Teds_PVP_Spelltimers_Save
+		--check if the frame is in the right spot
+		if s.savedpos then
+			if f:GetCenter() ~= s.savedpos then
+				--its in the wrong spot, so move it
+				f:SetPoint("CENTER", UIParent, "BOTTOMLEFT", s.savedpos)
+			end
+		end
 	end
 end
-function Teds_PVP_Spelltimers_DragFrame:Center()
+function m:Center()
 	--get current y position
 	local _,y = m:GetCenter()
 	--reset and move to center, maintaining y position
 	m:ClearAllPoints()
 	m:SetPoint("CENTER", UIParent, "BOTTOM", 0, y)
 end
-function Teds_PVP_Spelltimers_DragFrame:Reset()
+function m:Reset()
 	--reset and move to default position
 	m:ClearAllPoints()
 	m:SetPoint("TOP", UIParent, "TOP", 0, -50)
 end
-function Teds_PVP_Spelltimers_DragFrame:Done()
-	--get the mover's position
-	local x,y = m:GetCenter()
-	--hide the mover
-	m:Hide()
-	--reset the frame
-	f:ClearAllPoints()
-	--move the frame to the new spot
-	f:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
-	--reregister events
-	f:RegisterEvent("UNIT_AURA")
-	f:RegisterEvent("PLAYER_TARGET_CHANGED")
+function m:Done()
+	f:Mover()
 end
 function f:Mover()
-	--Unregister events so we don't activate while moving
-	f:UnregisterEvent("UNIT_AURA")
-	f:UnregisterEvent("PLAYER_TARGET_CHANGED")
-	--get position to set the mover
-	local x,y = f:GetCenter()
-	--hide frame
-	f:Hide()
-	--put the mover in the right spot
-	m:ClearAllPoints()
-	m:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
-	--show the mover
-	m:Show()
-	--if this is the mover's first load then we also have to set it up
-	if not m.loaded then
-		--ok, now we're loaded
-		m.loaded = true
-		--set up dragging
-		m:RegisterForDrag("LeftButton")
-		m:SetScript("OnDragStart", m.StartMoving)
-		m:SetScript("OnDragStop", m.StopMovingOrSizing)
-		--set up buttons and handlers
-		m.centerbutton:RegisterForClicks("AnyDown")
-		m.centerbutton:SetScript("OnClick", m.Center)
-		m.resetbutton:RegisterForClicks("AnyDown")
-		m.resetbutton:SetScript("OnClick", m.Reset)
-		m.donebutton:RegisterForClicks("AnyDown")
-		m.donebutton:SetScript("OnClick", m.Done)
+	--check if were already moving
+	if not m:IsShown() then
+	--we are not moving yet
+		--Unregister events so we don't activate while moving
+		f:UnregisterEvent("UNIT_AURA")
+		f:UnregisterEvent("PLAYER_TARGET_CHANGED")
+		--get position to set the mover
+		local x,y = f:GetCenter()
+		--hide frame
+		f:Hide()
+		--put the mover in the right spot
+		m:ClearAllPoints()
+		m:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
+		--show the mover
+		m:Show()
+		--if this is the mover's first load then we also have to set it up
+		if not m.loaded then
+			--ok, now we're loaded
+			m.loaded = true
+			--set up dragging
+			m:RegisterForDrag("LeftButton")
+			m:SetScript("OnDragStart", m.StartMoving)
+			m:SetScript("OnDragStop", m.StopMovingOrSizing)
+			--set up buttons and handlers
+			m.centerbutton:RegisterForClicks("AnyDown")
+			m.centerbutton:SetScript("OnClick", m.Center)
+			m.resetbutton:RegisterForClicks("AnyDown")
+			m.resetbutton:SetScript("OnClick", m.Reset)
+			m.donebutton:RegisterForClicks("AnyDown")
+			m.donebutton:SetScript("OnClick", m.Done)
+		end
+	else
+	--we are already moving
+		--get the mover's position
+		local x,y = m:GetCenter()
+		--hide the mover
+		m:Hide()
+		--reset the frame
+		f:ClearAllPoints()
+		--move the frame to the new spot
+		f:SetPoint("CENTER", UIParent, "BOTTOMLEFT", x, y)
+		--reregister events
+		f:RegisterEvent("UNIT_AURA")
+		f:RegisterEvent("PLAYER_TARGET_CHANGED")
+		--save the position in case it isnt saved by blizzard
+		s.savedpos = f:GetCenter()
 	end
 end
 --testing assignment
@@ -310,3 +329,21 @@ local function SlashHandler(msg, editbox)
 	end
 end
 SlashCmdList["TEDSPVPSPELLTIMERS"] = SlashHandler
+--Register Interface Options Panel
+--Hook in options frame
+c.name = "Ted's PVP Spelltimers"
+InterfaceOptions_AddCategory(c)
+--move button
+function c.movebutton:Click()
+	f:Mover()
+end
+c.movebutton:RegisterForClicks("AnyDown")
+c.movebutton:SetScript("OnClick", c.movebutton.Click)
+--reset button
+function c.resetbutton:Click()
+	m:Reset()
+end
+c.resetbutton:RegisterForClicks("AnyDown")
+c.resetbutton:SetScript("OnClick", c.resetbutton.Click)
+--testing open when reload
+InterfaceOptionsFrame_OpenToCategory(c)
