@@ -93,6 +93,7 @@ w.filter_def = {
 		[64901] = "Symbol of Hope",
 		[197268] = "Ray of Hope",
 		[213602] = "Greater Fade",
+		[213610] = "Holy Ward",
 	--Rogue
 		[5277] = "Evasion",
 		[31224] = "Cloak of Shadows",
