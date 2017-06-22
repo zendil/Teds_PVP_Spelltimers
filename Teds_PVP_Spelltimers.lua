@@ -64,6 +64,7 @@ w.filter_def = {
 		[122278] = "Dampen Harm",
 		[116844] = "Ring of Peace",
 		[116841] = "Tiger's Lust",
+		[216113] = "Way of the Crane",
 	--Paladin
 		--Certify all working 05AUG2016
 		[642] = "Divine Shield",
