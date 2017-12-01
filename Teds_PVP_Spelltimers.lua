@@ -25,23 +25,30 @@ w.filter_def = {
 		[209426] = "Darkness",
 		[218256] = "Empower Wards",
 	--Death Knight
-		--All working (30JUL2016)
+		--All specs
 		[48792] = "Icebound Fortitude",
 		[48707] = "Anti-Magic Shell",
+		[212552] = "Wraith Walk",
+		--Blood
 		[55233] = "Vampiric Blood",
 		[81256] = "Dancing Rune Weapon",
-		[212552] = "Wraith Walk",
 		[206977] = "Blood Mirror",
 		[194679] = "Rune Tap",
+		--Frost
+			--No spells
+		--Unholy
 		[207319] = "Corpse Shield",
 	--Druid
+		--All specs
 		[1850] = "Dash",
 		[22812] = "Barkskin",
-		[102342] = "Ironbark",
-		[61336] = "Survival Instincts",
-		[33891] = "Incarnation: Tree of Life",
 		[203727] = "Thorns",
 		[106898] = "Stampeding Roar",
+		--Restoration
+		[102342] = "Ironbark",
+		[33891] = "Incarnation: Tree of Life",
+		--Feral/Guardian
+		[61336] = "Survival Instincts",
 	--Hunter
 		[186265] = "Aspect of the Turtle",
 		[186257] = "Aspect of the Cheetah", --works
@@ -49,22 +56,31 @@ w.filter_def = {
 		[54216] = "Master's Call",
 		[53480] = "Roar of Sacrifice",
 	--Mage
-		--all working (30JUL2016)
-		[45438] = "Ice Block",
+		--All specs
+		[198111] = "Temporal Shield",
+		--Arcane
+		--Fire
 		[87023] = "Cauterize",
-		[198111] = "Temporal Shield", --untested (honor talent)
+		--Frost
+		[45438] = "Ice Block",
+		
+		 --untested (honor talent)
 		[110960] = "Greater Invisibility",
 	--Monk
-		[115203] = "Fortifying Brew",
-		[213664] = "Nimble Brew",
+		--All specs
+		[116841] = "Tiger's Lust",
+		--Mistweaver
+		[216113] = "Way of the Crane",
+		[116844] = "Ring of Peace",
 		[116849] = "Life Cocoon",
+		--Windwalker
+		[213664] = "Nimble Brew",
 		[125174] = "Touch of Karma",
+		--Brewmaster
+		[115203] = "Fortifying Brew",
 		[115176] = "Zen Meditation",
 		[122783] = "Diffuse Magic",
 		[122278] = "Dampen Harm",
-		[116844] = "Ring of Peace",
-		[116841] = "Tiger's Lust",
-		[216113] = "Way of the Crane",
 	--Paladin
 		--Certify all working 05AUG2016
 		[642] = "Divine Shield",
