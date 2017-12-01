@@ -367,4 +367,4 @@ end
 c.resetbutton:RegisterForClicks("AnyDown")
 c.resetbutton:SetScript("OnClick", c.resetbutton.Click)
 --testing open when reload
-InterfaceOptionsFrame_OpenToCategory(c)
+--InterfaceOptionsFrame_OpenToCategory(c)
