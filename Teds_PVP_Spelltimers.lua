@@ -29,15 +29,15 @@ w.filter_def = {
 		[48792] = "Icebound Fortitude",
 		[48707] = "Anti-Magic Shell",
 		[212552] = "Wraith Walk",
+		[48265] = "Death's Advance",
 		--Blood
 		[55233] = "Vampiric Blood",
 		[81256] = "Dancing Rune Weapon",
-		[206977] = "Blood Mirror",
 		[194679] = "Rune Tap",
 		--Frost
 			--No spells
 		--Unholy
-		[207319] = "Corpse Shield",
+		[145629] = "Anti-Magic Zone",--Not working
 	--Druid
 		--All specs
 		[1850] = "Dash",
