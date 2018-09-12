@@ -46,13 +46,17 @@ w.filter_def = {
 		--All specs
 		[1850] = "Dash",
 		[22812] = "Barkskin",
-		[203727] = "Thorns",
-		[106898] = "Stampeding Roar",
+		[236696] = "Thorns",
+		[252216] = "Tiger Dash",
+		--Balance
+			--No spells
 		--Restoration
 		[102342] = "Ironbark",
-		[33891] = "Incarnation: Tree of Life",
+		[117679] = "Incarnation: Tree of Life",
 		--Feral/Guardian
 		[61336] = "Survival Instincts",
+		[77764] = "Stampeding Roar",
+		[102558] = "Incarnation: Guardian of Ursoc",
 	--Hunter
 		[186265] = "Aspect of the Turtle",
 		[186257] = "Aspect of the Cheetah", --works
