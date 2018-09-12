@@ -17,13 +17,16 @@ w.activealerts = {}
 		--i.e. if you wanted to track "Marked for Death", it would not work as this creates a -DEBUFF- on the -PLAYER-
 w.filter_def = {
 	--Demon Hunter
+		--All Specs
 		[188501] = "Spectral Sight",
-		[196555] = "Netherwalk",
+		--Havoc
 		[212800] = "Blur",
-		[207810] = "Nether Bond",
-		[227225] = "Soul Barrier",
 		[209426] = "Darkness",
-		[218256] = "Empower Wards",
+		[196555] = "Netherwalk",
+		--Vengeance
+		[203819] = "Demon Spikes",
+		[263648] = "Soul Barrier",
+		[205629] = "Demonic Trample",
 	--Death Knight
 		--All specs
 		[48792] = "Icebound Fortitude",
