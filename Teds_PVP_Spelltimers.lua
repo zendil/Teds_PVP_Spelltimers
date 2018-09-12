@@ -30,6 +30,7 @@ w.filter_def = {
 		[48707] = "Anti-Magic Shell",
 		[212552] = "Wraith Walk",
 		[48265] = "Death's Advance",
+		[145629] = "Anti-Magic Zone",--Not working
 		--Blood
 		[55233] = "Vampiric Blood",
 		[81256] = "Dancing Rune Weapon",
@@ -37,7 +38,7 @@ w.filter_def = {
 		--Frost
 			--No spells
 		--Unholy
-		[145629] = "Anti-Magic Zone",--Not working
+			--No spells
 	--Druid
 		--All specs
 		[1850] = "Dash",
