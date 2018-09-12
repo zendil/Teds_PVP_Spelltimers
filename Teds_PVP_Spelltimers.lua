@@ -178,7 +178,7 @@ function f:Scan(event, ...)
 		w.activealerts = {}
 		--check all buffs
 		for i=1,40 do
-			local name,_,_,_,_,_,expire,_,steal,_,id = UnitAura("target",i,"HELPFUL")
+			local name,_,_,_,_,expire,_,steal,_,id = UnitAura("target",i,"HELPFUL")
 			if id then
 				--if buff exists (id is within bounds) then cache it
 				w.targetbuffs[i] = {["id"] = id,["expire"] = expire}
