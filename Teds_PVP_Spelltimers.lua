@@ -66,14 +66,16 @@ w.filter_def = {
 	--Mage
 		--All specs
 		[198111] = "Temporal Shield",
-		--Arcane
-		--Fire
-		[87023] = "Cauterize",
-		--Frost
 		[45438] = "Ice Block",
-		
-		 --untested (honor talent)
-		[110960] = "Greater Invisibility",
+		[198065] = "Prismatic Cloak",
+		--Arcane
+		[113862] = "Greater Invisibility",--after invisible
+		[110960] = "Greater Invisibility",--while invisible
+		[198158] = "Mass Invisibility",
+		--Fire
+		[86949] = "Cauterize",--not tested
+		--Frost
+			--No spells
 	--Monk
 		--All specs
 		[116841] = "Tiger's Lust",
