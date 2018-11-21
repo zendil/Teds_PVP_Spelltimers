@@ -122,12 +122,15 @@ w.filter_def = {
 		[213602] = "Greater Fade",
 		[213610] = "Holy Ward",
 	--Rogue
-		[5277] = "Evasion",
-		[31224] = "Cloak of Shadows",
-		[31230] = "Cheat Death",
-		--[212182] = "Smoke Bomb",--debuff, doesn't work
-		[2983] = "Sprint",
-		[199754] = "Riposte",
+		--All Specs
+			[5277] = "Evasion",--Not outlaw
+			[31224] = "Cloak of Shadows",
+			[31230] = "Cheat Death",
+			[2983] = "Sprint",
+		--Subtlety
+			--[212182] = "Smoke Bomb",--debuff, doesn't work
+		--Outlaw
+			[199754] = "Riposte",
 	--Shaman
 		--All working (30JUL2016)
 		[114052] = "Ascendance", --Restoration only
