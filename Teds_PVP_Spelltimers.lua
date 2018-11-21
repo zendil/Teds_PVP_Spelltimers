@@ -163,7 +163,7 @@ w.filter_def = {
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
 function f:Event(event, ...)
-	--switch by what event has occured
+	--switch by what event has occurred
 	if event == "UNIT_AURA" or event == "PLAYER_TARGET_CHANGED" then
 		f:Scan(event, ...)
 	elseif event == "ADDON_LOADED" then
