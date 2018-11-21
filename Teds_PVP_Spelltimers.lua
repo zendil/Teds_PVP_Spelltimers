@@ -174,7 +174,7 @@ w.filter_def = {
 			[871] = "Shield Wall",
 			[213915] = "Spell Reflection", --Mass Spell Reflection
 			[223658] = "Safeguard",
-			[199037] = "Leave No Man Behind",--not checked
+			[199038] = "Leave No Man Behind",--not checked
 	}
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
