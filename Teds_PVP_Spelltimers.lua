@@ -149,17 +149,19 @@ w.filter_def = {
 		[108416] = "Dark Pact",
 		[212295] = "Nether Ward",--untested (honor talent)
 	--Warrior
-		--All working (30JUL2016)
-		[23920] = "Spell Reflection",
+		[23920] = "Spell Reflection",--Prot
+		[216890] = "Spell Reflection",--DPS
 		[12975] = "Last Stand",
 		[871] = "Shield Wall",
 		[227847] = "Bladestorm", --Added because you are immune to cc
-		[46924] = "Bladestorm", --seperate fury version?
-		[114028] = "Spell Reflection", --Mass Spell Reflection --untested (honor talent)
+		[46924] = "Bladestorm", --separate fury version
+		[213915] = "Spell Reflection", --Mass Spell Reflection
 		[223658] = "Safeguard",
 		[184364] = "Enraged Regeneration",
-		[125565] = "Demoralizing Shout",
-		[97463] = "Commanding Shout",
+		[97463] = "Rallying Cry",
+		[18499] = "Berserker Rage",
+		[199037] = "Leave No Man Behind",--not checked
+		[118038] = "Die by the Sword",
 	}
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
