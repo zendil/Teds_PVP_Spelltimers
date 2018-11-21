@@ -150,19 +150,24 @@ w.filter_def = {
 		[212295] = "Nether Ward",
 		[221703] = "Casting Circle",--wrong id, ground effect
 	--Warrior
-		[23920] = "Spell Reflection",--Prot
-		[216890] = "Spell Reflection",--DPS
-		[12975] = "Last Stand",
-		[871] = "Shield Wall",
-		[227847] = "Bladestorm", --Added because you are immune to cc
-		[46924] = "Bladestorm", --separate fury version
-		[213915] = "Spell Reflection", --Mass Spell Reflection
-		[223658] = "Safeguard",
-		[184364] = "Enraged Regeneration",
-		[97463] = "Rallying Cry",
-		[18499] = "Berserker Rage",
-		[199037] = "Leave No Man Behind",--not checked
-		[118038] = "Die by the Sword",
+		--All Specs
+			[97463] = "Rallying Cry",
+			[18499] = "Berserker Rage",
+		--DPS Specs
+			[216890] = "Spell Reflection",--DPS
+		--Arms
+			[227847] = "Bladestorm", --Added because you are immune to cc
+			[118038] = "Die by the Sword",
+		--Fury
+			[46924] = "Bladestorm", --separate fury version
+			[184364] = "Enraged Regeneration",
+		--Prot
+			[23920] = "Spell Reflection",--Prot
+			[12975] = "Last Stand",
+			[871] = "Shield Wall",
+			[213915] = "Spell Reflection", --Mass Spell Reflection
+			[223658] = "Safeguard",
+			[199037] = "Leave No Man Behind",--not checked
 	}
 --TODO: Offensive abilities, and give option to pick which filters are applied
 --Define Handlers
