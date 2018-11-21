@@ -125,8 +125,9 @@ w.filter_def = {
 		[5277] = "Evasion",
 		[31224] = "Cloak of Shadows",
 		[31230] = "Cheat Death",
-		[76577] = "Smoke Bomb",--need to check buff id
+		--[212182] = "Smoke Bomb",--debuff, doesn't work
 		[2983] = "Sprint",
+		[199754] = "Riposte",
 	--Shaman
 		--All working (30JUL2016)
 		[114052] = "Ascendance", --Restoration only
