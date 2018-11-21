@@ -33,7 +33,7 @@ w.filter_def = {
 		[48707] = "Anti-Magic Shell",
 		[212552] = "Wraith Walk",
 		[48265] = "Death's Advance",
-		[145629] = "Anti-Magic Zone",--Not working
+		[145629] = "Anti-Magic Zone",
 		--Blood
 		[55233] = "Vampiric Blood",
 		[81256] = "Dancing Rune Weapon",
