@@ -132,20 +132,24 @@ w.filter_def = {
 		--Outlaw
 			[199754] = "Riposte",
 	--Shaman
-		--All working (30JUL2016)
-		[114052] = "Ascendance", --Restoration only
-		--[108280] = "Healing Tide",--healing tide gives no buff, cannot be detected
-		[98007] = "Spirit Link Totem",
-		[204293] = "Spirit Link",--not tested (honor talent)
-		[58875] = "Spirit Walk",
-		[79206] = "Spiritwalker's Grace",
-		[108271] = "Astral Shift",
-		[204331] = "Counterstrike Totem",--id might need some work --not tested (honor talent)
-		[210918] = "Ethereal Form",
-		[204336] = "Grounding Totem",--id may need some work --not tested (honor talent)
-		[108281] = "Ancestral Guidance",
-		[207498] = "Ancestral Protection Totem",
-		[192082] = "Wind Rush Totem",
+		--All Specs
+			[108271] = "Astral Shift",--Not enhancement
+			--[204331] = "Counterstrike Totem",--counterstrike gives no buff, cannot be detected
+			[8178] = "Grounding Totem",
+			[192082] = "Wind Rush Totem",
+			--[8143] = "Tremor Totem",--tremor gives no buff, cannot be detected
+		--Elemental
+			[108281] = "Ancestral Guidance",
+		--Enhancement
+			[210918] = "Ethereal Form",
+			[58875] = "Spirit Walk",
+		--Restoration
+			[114052] = "Ascendance", --Restoration only
+			[98007] = "Spirit Link Totem",--id not working; no duration
+			[207498] = "Ancestral Protection Totem",
+			--[108280] = "Healing Tide",--healing tide gives no buff, cannot be detected
+			[79206] = "Spiritwalker's Grace",
+			[201633] = "Earthen Wall Totem",
 	--Warlock
 		--All Specs
 		[104773] = "Unending Resolve",
