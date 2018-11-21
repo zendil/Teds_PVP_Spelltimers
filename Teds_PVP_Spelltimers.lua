@@ -155,7 +155,7 @@ w.filter_def = {
 		[104773] = "Unending Resolve",
 		[108416] = "Dark Pact",
 		[212295] = "Nether Ward",
-		[221703] = "Casting Circle",--wrong id, ground effect
+		[221705] = "Casting Circle",
 	--Warrior
 		--All Specs
 			[97463] = "Rallying Cry",
