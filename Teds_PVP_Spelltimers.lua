@@ -224,6 +224,10 @@ function f:Scan(event, ...)
 					--buff is in filter and has non-negative duration -> create alert
 					w.activealerts[v.id] = {["name"] = w.filter_def[v.id],["expire"] = v.expire}
 				end
+				if w.filter_def[v.id] and v.expire == 0 then
+					--buff is in filter but has no/permanent duration -> create alert
+					w.activealerts[v.id] = {["name"] = w.filter_def[v.id],["expire"] = v.expire}
+				end
 			end
 		end
 		--now, check if we had any that matched filter
