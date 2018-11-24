@@ -78,19 +78,23 @@ w.filter_def = {
 			--No spells
 	--Monk
 		--All specs
-		[116841] = "Tiger's Lust",
+			[116841] = "Tiger's Lust",
+			[201318] = "Fortifying Brew",
+			[122278] = "Dampen Harm",
+		--Not Brewmaster
+			[122783] = "Diffuse Magic",
 		--Mistweaver
-		[216113] = "Way of the Crane",
-		[116844] = "Ring of Peace",
-		[116849] = "Life Cocoon",
+			[216113] = "Way of the Crane",
+			[209584] = "Zen Focus Tea",
+			[116849] = "Life Cocoon",
 		--Windwalker
-		[213664] = "Nimble Brew",
-		[125174] = "Touch of Karma",
+			[125174] = "Touch of Karma",
 		--Brewmaster
-		[115203] = "Fortifying Brew",
-		[115176] = "Zen Meditation",
-		[122783] = "Diffuse Magic",
-		[122278] = "Dampen Harm",
+			[120954] = "Fortifying Brew",
+			[215479] = "Ironskin Brew",
+			[115176] = "Zen Meditation",
+			[202248] = "Guided Meditation",
+			[213664] = "Nimble Brew",
 	--Paladin
 		--Certify all working 05AUG2016
 		[642] = "Divine Shield",
