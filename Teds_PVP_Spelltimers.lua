@@ -114,17 +114,25 @@ w.filter_def = {
 		[228049] = "Guardian of the Forgotten Queen",--verify buff spell id --not tested (honor talent)
 		[205191] = "Eye for an Eye",
 	--Priest
-		--All working (31JUL2016)
-		[81782] = "Power Word: Barrier",--correct id, not working
-		[47585] = "Dispersion",
-		[47788] = "Guardian Spirit",
-		[33206] = "Pain Suppression",
-		[27827] = "Spirit of Redemption",
-		[200183] = "Apotheosis",
-		[64901] = "Symbol of Hope",
-		[197268] = "Ray of Hope",
-		[213602] = "Greater Fade",
-		[213610] = "Holy Ward",
+		--All Specs
+			--[121557] = "Angelic Feather",--exclude, spammable
+			--[65081] = "Body and Soul",--exclude, spammable
+		--Discipline
+			[33206] = "Pain Suppression",
+			[81782] = "Power Word: Barrier",
+			[47536] = "Rapture",
+			[271466] = "Luminous Barrier",
+		--Holy
+			[200183] = "Apotheosis",
+			[213610] = "Holy Ward",
+			[47788] = "Guardian Spirit",
+			[196773] = "Inner Focus",
+			[213602] = "Greater Fade",
+			[215769] = "Spirit of Redemption",
+			[232707] = "Ray of Hope",
+		--Shadow
+			[47585] = "Dispersion",
+			[15286] = "Vampiric Embrace",
 	--Rogue
 		--All Specs
 			[5277] = "Evasion",--Not outlaw
