@@ -58,11 +58,20 @@ w.filter_def = {
 		[77764] = "Stampeding Roar",
 		[102558] = "Incarnation: Guardian of Ursoc",
 	--Hunter
-		[186265] = "Aspect of the Turtle",
-		[186257] = "Aspect of the Cheetah", --works
-		[109215] = "Posthaste",
-		[54216] = "Master's Call",
-		[53480] = "Roar of Sacrifice",
+		--All Specs
+			[109215] = "Posthaste",
+			[186257] = "Aspect of the Cheetah",--check buff from honor talent 'hunting party'
+			[186257] = "Aspect of the Cheetah",--follow up buff
+			[186265] = "Aspect of the Turtle",
+			[53480] = "Roar of Sacrifice",--check
+			[54216] = "Master's Call",--check
+		--Marksmanship
+			--No spells
+		--Beast Mastery
+			[212668] = "The Beast Within",--check
+			[248518] = "Interlope",--check
+		--Survival
+			--No spells
 	--Mage
 		--All specs
 		[198111] = "Temporal Shield",
