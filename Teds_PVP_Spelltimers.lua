@@ -73,7 +73,7 @@ w.filter_def = {
 		[110960] = "Greater Invisibility",--while invisible
 		[198158] = "Mass Invisibility",
 		--Fire
-		[87023] = "Cauterize",--not tested
+		[87023] = "Cauterize",
 		--Frost
 			--No spells
 	--Monk
