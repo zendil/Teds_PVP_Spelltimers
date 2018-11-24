@@ -96,23 +96,28 @@ w.filter_def = {
 			[202248] = "Guided Meditation",
 			[213664] = "Nimble Brew",
 	--Paladin
-		--Certify all working 05AUG2016
-		[642] = "Divine Shield",
-		[498] = "Divine Protection",
-		[1022] = "Blessing of Protection",
-		[1044] = "Blessing of Freedom",
-		[6940] = "Blessing of Sacrifice",--Ret/Prot
-		[199448] = "Blessing of Sacrifice",--Holy
-		[31850] = "Ardent Defender",
-		[31821] = "Aura Mastery",
-		[221886] = "Divine Steed",--working on blood elf, could be racial (further testing needed)
-		[86659] = "Guardian of Ancient Kings",
-		[204150] = "Aegis of Light",--Source
-		[204335] = "Aegis of Light",--Buff
-		[204018] = "Blessing of Spellwarding",
-		[210256] = "Blessing of Sanctuary",--spell removed?
-		[228049] = "Guardian of the Forgotten Queen",--verify buff spell id --not tested (honor talent)
-		[205191] = "Eye for an Eye",
+		--All Specs
+			[1022] = "Blessing of Protection",
+			[1044] = "Blessing of Freedom",
+			[642] = "Divine Shield",
+			[221886] = "Divine Steed",--working on blood elf, could be racial (further testing needed)
+		--Holy
+			[31821] = "Aura Mastery",--need to check for buffs on party members
+			[31884] = "Avenging Wrath",--works for all specs but important for holy
+			[498] = "Divine Protection",
+			[105809] = "Holy Avenger",
+			[199448] = "Blessing of Sacrifice",--Holy
+		--Protection
+			[86659] = "Guardian of Ancient Kings",
+			[228050] = "Divine Shield",--from Guardian of the Forgotten Queen
+			[204018] = "Blessing of Spellwarding",
+			[31850] = "Ardent Defender",
+			[204335] = "Aegis of Light",--Buff, source is different id
+			[6940] = "Blessing of Sacrifice",--Prot
+		--Retribution
+			[184662] = "Shield of Vengeance",
+			[205191] = "Eye for an Eye",
+			[210256] = "Blessing of Sanctuary",
 	--Priest
 		--All Specs
 			--[121557] = "Angelic Feather",--exclude, spammable
