@@ -60,8 +60,8 @@ w.filter_def = {
 	--Hunter
 		--All Specs
 			[109215] = "Posthaste",
-			[186257] = "Aspect of the Cheetah",--check buff from honor talent 'hunting party'
-			[186257] = "Aspect of the Cheetah",--follow up buff
+			[186257] = "Aspect of the Cheetah",
+			[186258] = "Aspect of the Cheetah",--follow up buff
 			[186265] = "Aspect of the Turtle",
 			[53480] = "Roar of Sacrifice",--check
 			[54216] = "Master's Call",--check
