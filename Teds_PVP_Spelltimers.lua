@@ -62,6 +62,7 @@ w.filter_def = {
 			[109215] = "Posthaste",
 			[186257] = "Aspect of the Cheetah",
 			[186258] = "Aspect of the Cheetah",--follow up buff
+			[203233] = "Aspect of the Cheetah",--hunting party honor talent
 			[186265] = "Aspect of the Turtle",
 			[53480] = "Roar of Sacrifice",--check
 			[54216] = "Master's Call",--check
