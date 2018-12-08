@@ -64,8 +64,8 @@ w.filter_def = {
 			[186258] = "Aspect of the Cheetah",--follow up buff
 			[203233] = "Aspect of the Cheetah",--hunting party honor talent
 			[186265] = "Aspect of the Turtle",
-			[54216] = "Master's Call",--check
 			[53480] = "Roar of Sacrifice",
+			[54216] = "Master's Call",
 		--Marksmanship
 			--No spells
 		--Beast Mastery
