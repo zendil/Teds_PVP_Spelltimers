@@ -69,8 +69,8 @@ w.filter_def = {
 		--Marksmanship
 			--No spells
 		--Beast Mastery
-			[212668] = "The Beast Within",--check
 			[248518] = "Interlope",--check
+			[212704] = "The Beast Within",
 		--Survival
 			--No spells
 	--Mage
