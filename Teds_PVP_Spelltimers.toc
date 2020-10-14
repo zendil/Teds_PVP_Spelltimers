@@ -1,4 +1,4 @@
-## Interface: 80000
+## Interface: 90001
 ## Title: Ted's PVP Spelltimers
 ## Notes: Shows alerts for enemy buffs. (Designed for PVP)
 ## Version: @project-version@
